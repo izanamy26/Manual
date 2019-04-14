@@ -1,11 +1,12 @@
 import React from 'react';
 
 
+
 function TodoItem(props) {
     return (
        <div className="todo-item">
-        <input id={props.itemId} type="checkbox" name="check" value="check1" />
-        <label for={props.itemId}>Checkbox No. 1</label>
+        <input id={props.todo.id} type="checkbox" name="check" checked={props.todo.completed} value={props.todo.id} />
+        <label for={props.todo.id}>{props.todo.text}</label>
       </div>
     );
 }

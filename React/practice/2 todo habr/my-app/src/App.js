@@ -4,16 +4,19 @@ import s from "./App.css";
 import TodoItem from './components/Check';
 import Footer from './components/Footer';
 
+import todoData from './components/todoData';
+
 function App() {
+
+    const todoComponent = todoData.map(item =>
+      <TodoItem key={item.id} todo={item} />); 
+
     return (
  
       <div className='app-body'>
-      
-          <TodoItem itemId="item-1" />
-          <TodoItem itemId="item-2" />
-          <TodoItem itemId="item-3" />
-          <TodoItem itemId="item-4" />
-
+        <div className='todo-app'>
+          {todoComponent}
+        </div>
       </div>
   
 
