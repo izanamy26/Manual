@@ -1,14 +1,20 @@
 import React from 'react';
-import s from "./App.css";
+import AppStyle from "./App.css";
 
 import TodoItem from './components/Check';
-import Footer from './components/Footer';
-
 import todoData from './components/todoData';
 
-function App() {
+class App extends React.Component {
 
-    const todoComponent = todoData.map(item =>
+  constructor() {
+    super();
+    this.state = {
+      todos: todoData 
+    };
+  }
+
+  render() {
+    const todoComponent = this.state.todos.map(item =>
       <TodoItem key={item.id} todo={item} />); 
 
     return (
@@ -18,9 +24,8 @@ function App() {
           {todoComponent}
         </div>
       </div>
-  
-
     );
+  }
 }
 
 
