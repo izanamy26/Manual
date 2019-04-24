@@ -275,14 +275,18 @@ class App extends React.Component {
 }
 ```
 
+Для изменения состояния используется метод - **setState()**. Метод должен возвращать новое состояние, а не модифицировать старое.
 
-
-
-
-
-
-11111111111111111111
-
+```javascript
+handleClick() {
+    this.setState(prevState => {
+        return {
+            count: prevState.count + 1
+        }
+    })
+}
+```
+Использовать оператор ```++`` в данном случае нельзя, так как он приводит к модификации **prevState.count**
 
 
 
