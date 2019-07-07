@@ -2,18 +2,24 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 class Row extends Component {
-    constructor() {
+    constructor(props) {
         super();
+        this.dataRow = props.dataRow;
+        this.indexRow = props.index;
     }
 
-    render() {
+    render() {     
         return (
-            <tr>
-                <td>Hello!</td>
+            <tr key={"row-" + this.indexRow}>
+                {Object.keys(this.dataRow).map((item, index) =>
+                    <td key={'td-' + this.indexRow + '-' + index}
+                        className={item}>
+                            {this.dataRow[item].value}
+                        </td>
+                    )}
             </tr>
         );  
     }
-
 }
 
  export default Row;

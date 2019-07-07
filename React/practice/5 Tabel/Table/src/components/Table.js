@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Row from "./Row";
 import DataManager from "./../common/tableData";
-import { settingsTable } from "./../common/options";
+import { settingsTable, structureTable } from "./../common/options";
 
 class Table extends Component {
     constructor() {
         super();
-console.log(settingsTable);
 
         this.tableData = DataManager.getTableData(settingsTable.length);
+      
        
         console.log('tabel data: ', this.tableData);
     }
@@ -17,8 +17,17 @@ console.log(settingsTable);
     render() {
         return (
             <table>
+                <thead>
+                    <tr>
+                        { Object.keys(structureTable).map(item => 
+                            <td className={item} key={item}>{structureTable[item].title}</td>
+                            )}
+                    </tr>
+                </thead>   
                 <tbody>
-                    <Row />
+                    {this.tableData.map((item, index) => 
+                        <Row key={index + 1} dataRow={item} index={index} />
+                        )}
                 </tbody>
             </table>    
         );  
