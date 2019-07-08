@@ -11,34 +11,32 @@ const Generator = {
     },
 
     getRandomString(length) {
-        const startASCIICodeLatinUpper = 65;
-        const endASCIICodeLatinUpper = 90;
+        const startCodeLatinUpper = 65;
+        const endCodeLatinUpper = 90;
 
-        let arrCode = Array(length).fill('')
-                    .map(() => {
-                       return this.getRandomNumber(startASCIICodeLatinUpper, endASCIICodeLatinUpper);
-                    });
-  
+       let arrCode = Array.from({ length: length }, 
+                                () => this.getRandomNumber(startCodeLatinUpper, endCodeLatinUpper));
+
        return String.fromCharCode(...arrCode);
     },
 
-    getRandomData(options) {
+    getRandomData({ type, begin, end, length }) {
        const defaultValue = '';
 
-       switch (options.type) {
+       switch (type) {
             case 'date':
-                return (options.begin !== undefined) 
-                        ? this.getRandomDate(new Date(options.begin), new Date())
+                return (begin !== undefined) 
+                        ? this.getRandomDate(new Date(begin), new Date())
                         : defaultValue;
 
             case 'string':
-                return (options.lengtn !== undefined)
-                        ? this.getRandomString(options.lengtn)
+                return (length !== undefined)
+                        ? this.getRandomString(length)
                         : defaultValue;  
                 
             case 'number':
-                return (options.begin !== undefined && options.end )
-                        ? this.getRandomNumber(options.begin, options.end)
+                return (begin !== undefined && end !== undefined)
+                        ? this.getRandomNumber(begin, end)
                         : defaultValue;
            
             default:

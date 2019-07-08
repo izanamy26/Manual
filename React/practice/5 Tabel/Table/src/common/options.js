@@ -1,31 +1,60 @@
 const structureTable= {
-    col1: {
+    date: {
         type: 'date',
         begin: '2012-11-31',
-        title: 'Дата' 
+        title: 'Date' 
     },
-    col2: {
+    hits: {
         type: 'number',
-        begin: 1,
-        end: 200,
-        title: 'Число 1' 
+        begin: 0,
+        end: 5,
+        title: 'Hits' 
     },
-    col3: {
+    unique: {
         type: 'number',
-        begin: 200,
-        end: 400,
-        title: 'Число 2'     
+        begin: 0,
+        end: 100,
+        title: 'Unique'     
     },
-    col4: {
+    registrations: {
         type: 'string',
-        lengtn: 10,
-        title: 'Строка' 
+        length: 5,
+        title: 'Registrations' 
     },
-    col5: {
+    demo: {
+        type: 'string',
+        length: 5,
+        title: 'Demo registrations'     
+    },
+    conversions: {
         type: 'number',
-        begin: 400,
-        end: 500,
-        title: 'Число 3'     
+        begin: 0,
+        end: 100,
+        title: 'Conversions'
+    },
+    deposit: {
+        type: 'number',
+        begin: 0,
+        end: 80,
+        title: 'Deposit'
+    },
+    ftd: {
+        type: 'number',
+        begin: 0,
+        end: 100,
+        title: 'Ftd'
+    },
+    deals: {
+        type: 'number',
+        begin: 0,
+        end: 200,
+        title: 'Deals'
+    },
+    profit: {
+        type: 'number',
+        begin: 0,
+        end: 50,
+        title: 'Profit'
     }
 };
 
