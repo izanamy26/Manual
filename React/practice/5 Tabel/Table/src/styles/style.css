@@ -1,3 +1,4 @@
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -30,4 +31,13 @@ table tbody tr:nth-child(2n) {
 
 table tbody tr:hover {
     background: #ebffe8;
+}
+
+table tbody tr td span {
+    background-color: #f5770a;
+    color: #ffffff;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px;
+    font-size: 11px; 
 }
