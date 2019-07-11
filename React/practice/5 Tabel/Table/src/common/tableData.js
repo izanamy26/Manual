@@ -1,4 +1,4 @@
-import Generator from "./dataGenerator";
+import Generator from "./DataGenerator";
 import { structureTable } from "./options";
 
 const getItemTableData = options => {
@@ -15,9 +15,7 @@ const getRowTableData = () => {
 }
 
 const getTableData = length => {
-    return Array(length).fill({}).map(item => {
-       return getRowTableData(); 
-   });
+    return Array.from({length: length}, () => getRowTableData());
 };
 
 export default {getTableData};
