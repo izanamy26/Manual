@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Row from "./Row";
-import DataManager from "../common/tableData";
+import DataManager from "../common/TableData";
 import Sorter from "../common/Sorter";
 import { settingsTable, structureTable } from "./../common/options";
 
