@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Table from "./Table";
+import DateSelect from "./DateSelect";
+import Paginator from "./Paginator";
+
+
 
 class App extends Component {
     constructor() {
@@ -9,7 +13,11 @@ class App extends Component {
 
     render() {
         return (
-            <Table />
+            <div>
+                <DateSelect />
+                <Table />
+                <Paginator />
+            </div>
         );  
     }
 
