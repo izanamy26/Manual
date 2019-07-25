@@ -4,20 +4,37 @@ import { DatePicker } from '@y0c/react-datepicker';
 import '@y0c/react-datepicker/assets/styles/calendar.scss';
 
 class DateSelect extends Component {
-    onChange(date) {
-        console.log(date);
+    constructor() {
+      super();
+
+      this.state={
+        'from' : '',
+        'to': ''
+      }
+
+      this.handlerChangeFromDate = this.onChange.bind(this, 'from');
+      this.handlerChangeToDate = this.onChange.bind(this, 'to');
+    }
+
+
+    onChange(stateName, date, strDate) {
+        this.setState({
+          [stateName] : strDate
+        });
       }
       
       render() {
         return (
-            <div>
-                 <DatePicker  onChange={this.onChange} 
+            <div className='date-block'>
+                 <DatePicker  onChange={this.handlerChangeFromDate} 
+                    className='date-from'
                     showDefaultIcon
-                    dateFormat='DD.MM.YYYY' />
+                    dateFormat='YYYY-MM-DD' />
 
-                <DatePicker  onChange={this.onChange} 
+                <DatePicker  onChange={this.handlerChangeToDate} 
+                    className='date-to'
                     showDefaultIcon
-                    dateFormat='DD.MM.YYYY' />
+                    dateFormat='YYYY-MM-DD' />
             </div>
          
         )

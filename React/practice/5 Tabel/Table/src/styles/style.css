@@ -1,4 +1,4 @@
-
+/* Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -8,21 +8,21 @@ table {
 table thead tr {
     color: #ffffff; 
     font-weight: bold; 
-    background: #00bf80;
+    background: #00bfff;
 }
 
 table thead tr td {
-    font-size: 16px;
-    padding: 20px 15px;
+    font-size: 14px;
+    padding: 15px 10px;
     text-align: center;
 }
 
 table tbody tr td {
     border-top: 1px solid #e8e9eb;
     border-bottom: 1px solid #e8e9eb;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 table tbody tr:nth-child(2n) {
@@ -30,7 +30,7 @@ table tbody tr:nth-child(2n) {
 }
 
 table tbody tr:hover {
-    background: #ebffe8;
+    background: #e2f5fa;
 }
 
 table tbody tr td span {

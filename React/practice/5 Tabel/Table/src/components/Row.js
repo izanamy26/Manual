@@ -13,16 +13,11 @@ class Row extends Component {
 
         this.clickMoreDetailsHandle = this.clickMoreDetailsHandle.bind(this);
     }
-
    
     clickMoreDetailsHandle(e) {
-        console.log('this: ', this);
-
         this.setState((state, props) => ({
             datailsVisible: Boolean(state.datailsVisible ^ 1)
           }));
-
-       console.log('state: ', this.state);   
     }
 
     render() {     

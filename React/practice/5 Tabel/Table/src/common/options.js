@@ -59,7 +59,13 @@ const structureTable= {
 };
 
 const settingsTable = {
-    length: 10
+    length: 20
 };
 
-export {settingsTable, structureTable};
+const settingsPaginator = {
+    itemsPerPage: 5,
+    startActivePage: 1,
+    totalItems: settingsTable.length
+};
+
+export {settingsTable, structureTable, settingsPaginator};
