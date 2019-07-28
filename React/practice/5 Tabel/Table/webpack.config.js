@@ -30,10 +30,24 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
+              import: true,
               modules: true
             }
           }
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+                loader: "style-loader"
+               }, {
+                 loader: "css-loader"
+              }, {
+            loader: "sass-loader",
+            options: {
+                import: true
+            }
+        }]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
