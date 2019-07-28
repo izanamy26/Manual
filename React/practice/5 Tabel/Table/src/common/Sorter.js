@@ -1,7 +1,9 @@
-const ORDER_DESC = 'desc';
-const ORDER_ASC = 'asc';
+
 
 const Sorter = {
+    ORDER_DESC: 'desc',
+    ORDER_ASC: 'asc',
+
     sortByDate(data, column, order) {
 
     },

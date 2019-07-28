@@ -2,7 +2,10 @@ const Generator = {
 
     getRandomDate(beginDate, endDate) {
         return new Date(beginDate.getTime() + Math.random() * (endDate.getTime() - beginDate.getTime()))
-                        .toLocaleDateString('ru-RU');
+                        .toLocaleDateString('ru-RU')
+                        .split('.')
+                        .reverse()
+                        .join('-');
                     
     },
    

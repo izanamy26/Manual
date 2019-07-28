@@ -1,37 +1,15 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Row from "./Row";
-import DataManager from "../common/tableData";
-import Sorter from "../common/Sorter";
-import { settingsTable, structureTable } from "./../common/options";
+import { structureTable } from "./../common/options";
 
-const ORDER_DESC = 'desc';
-const ORDER_ASC = 'asc';
 
 class Table extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            sortOrder: ORDER_DESC
-        };
-
-        this.tableData = DataManager.getTableData(settingsTable.length);
-
-        console.log('tabel data: ', this.tableData);
+    constructor(props) {
+        super(props);
     }
 
     clickHeadCellHandle(item) {
-        this.setState((state, props) => ({
-            sortOrder: state.sortOrder == ORDER_DESC ? ORDER_ASC : ORDER_DESC
-          }));
-
-        let data = Sorter.getSortedData( this.tableData,
-                                         item, 
-                                         structureTable[item].type, 
-                                         this.state.sortOrder );
-
-        console.log(data);
+        this.props.sort(item);
     }
 
 
@@ -48,14 +26,13 @@ class Table extends Component {
                     </tr>
                 </thead>   
                 <tbody>
-                    {this.tableData.map((item, index) => 
+                    {this.props.data.map((item, index) => 
                         <Row key={index + 1} dataRow={item} index={index} />
                         )}
                 </tbody>
             </table>    
         );  
     }
-
 }
 
  export default Table;
