@@ -4,6 +4,7 @@ import Table from "./Table";
 import DateSelect from "./DateSelect";
 import Paginator from "./Paginator";
 import { settingsTable } from "./../common/options";
+import Sorter from "../common/Sorter";
 import DataManager from "../common/TableData";
 
 
@@ -14,18 +15,32 @@ class App extends Component {
         this.data =  DataManager.getTableData(settingsTable.length);    
 
         this.state = {
-            data: this.data
+           showData: this.data
         };
 
-        this.changeShowedData = this.changeShowedData.bind(this);
+        this.sortData = this.sortData.bind(this);
         this.changePage = this.changePage.bind(this);
     }
 
-    changeShowedData() {}
+   
+    sortData(item) {
+        console.log('item: ', item);
+        /*this.setState((state, props) => ({
+            sortOrder: state.sortOrder == ORDER_DESC ? ORDER_ASC : ORDER_DESC
+          }));
+
+        let data = Sorter.getSortedData( this.props.data,
+                                         item, 
+                                         structureTable[item].type, 
+                                         this.state.sortOrder );
+
+        console.log(data);*/
+    }     
+
 
     changePage (dataPerPage) {
         this.setState({
-            data: dataPerPage
+            showData: dataPerPage
         });
     }
 
@@ -33,7 +48,7 @@ class App extends Component {
         return (
             <div>
                 <DateSelect />
-                <Table data={this.state.data} />
+                <Table data={this.state.showData} sort={this.sortData} />
                 <Paginator data={this.data} onChangePage={this.changePage}/>
             </div>
         );  
