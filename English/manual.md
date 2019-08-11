@@ -8,25 +8,22 @@
 *He said **that** he liked the film. He said he liked the film.*
 
 Смена времен:
+
 |Прямая речь                  | Косвенная речь          |
 |:--------------------------:|:-----------------------:|
 |  Present Simple   =>       | Past Simple             |
 |*"I like playing tennis."*  |*He said that he liked playing tennis*|
-|... |...|
 |  Present Contionious   =>  | Past Contionious        |
 |*"We are having dinner"*    |*They said they were having dinner.*|
-|... |...|
 |  Present Perfect   =>      | Past Perfect |
 |*He has been to London.*    |*He said he had been to London.*|
-|... |...|
 |  Past Simple   =>          | Past Perfect |
 |*We lost our cat.* |*They said they had lost their cat*|
-|... |...|
-|  Past Contionious   =>     | Past Perfect Contionious |   
+|  Past Contionious   =>     | Past Perfect Contionious |  
 |*I was listening to music*  |*He said he had been listening / he was listening to music* |
-|... |...|
 |  Future Simple   =>        | Fiture in the past Simple |
 |*I will buy a laptop*|*She said she would buy a laptop.*|
+
 
 При этом слова и выражения, обозначающие время, изменяются следующим образом:
 

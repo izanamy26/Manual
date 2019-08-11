@@ -1,6 +1,8 @@
 # Vue 
 <a href="https://ru.vuejs.org/">https://ru.vuejs.org/</a>
 ***
+[Компоненты](#components)
+
 ***
 VueJS представляет CLI для установки vue и начала работы с активацией сервера. 
 * npm install --global vue-cli
@@ -15,3 +17,20 @@ VueJS представляет CLI для установки vue и начала
 * npm run dev
 
 ***
+
+## Компоненты <a name="components"></a>
+```javascript
+// Определяем новый компонент под именем todo-item
+Vue.component('todo-item', {
+  template: '<li>Это одна задача в списке</li>'
+})
+```
+Теперь его можно использовать в шаблоне другого компонента:
+
+```javascript
+<ol>
+  <!-- Создаём экземпляр компонента todo-item -->
+  <todo-item></todo-item>
+</ol>
+```
+Когда экземпляр Vue создан, он добавляет все свойства, найденные в опции data, в систему реактивности Vue.
