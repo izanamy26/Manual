@@ -11,12 +11,12 @@
 * <a src="https://ru.reactjs.org/docs/getting-started.html">Документация React</a>
 * [Полезное](#sweet)
 
-1.
+*****
 * npm i -g create-react-app
 * npx create-react-app react-tutorial
 * npm start (из react-tutorial папки)
 
-2.
+****
 * npm create-react-app my-app
 * cd my-app
 * npm start
