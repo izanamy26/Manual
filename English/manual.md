@@ -1,12 +1,20 @@
- [Времена](#times)   
- * [Present Simple](#present-simple)  
- * [Past Perfect Simple](#past-perfect-simple)
+ * [Времена](#times)   
+    
+    * [Present Perfect Simple](#present-perfect-simple)
+    * [Present Perfect Continious](#present-perfect-continious)
+    * [Past Simple](#past-simple)
+    * [Past Perfect Simple](#past-perfect-simple)
+    * [Future Simple](#future-simple)
 
- [Условные предложения (Conditions)](#conditions)  
- [-ing форма глагола](#ing)  
- [Косвенная речь](#reported-speech)  
- [Предлоги](#preposition)
- [Согласие/Несогласие](#agreeing-disagreeing)
+ * [Косвенная речь](#reported-speech) 
+ * [Условные предложения (Conditions)](#conditions)  
+ * [-ing форма глагола](#ing)  
+ * [Предлоги](#preposition)
+ * [Согласие/Несогласие](#agreeing-disagreeing)
+ * [Описание расположения](#location)
+ * [Someone / Something / Somewhere](#someone-somewhere)
+ * [Относительные местоимения](#relative-pronouns)
+ * [Прилагательные](#adjectives)
 
 
 
@@ -316,7 +324,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 *-I never walk to school.  
  -I do.*
 
-# Описание расположения
+# Описание расположения <a name='location'></a>
 Используются фразы:
 * *is situated/located*
 * *in the east/west/south-east ... of*
@@ -326,7 +334,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 Пример:  
 *The art gallery is located in the heart of the city.*
 
-# Someone / Something / Somewhere
+# Someone / Something / Somewhere <a name='someone-somewhere'></a>
 * **Someone / Something / Somewhere** используется в положительных предложениях.
 * **Anyone / Anybody / Anything / Anywhere** используется в вопросах и отрицательных предложениях.
 * **No one / Nobody / Nothing / Nowhere**  используется в отрицательных предложениях, как альтернатива *Not anyone / Not anybody / Not anything / Not anywhere*
@@ -339,3 +347,29 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 *A clock is something which shows the time.*  
 **WHERE** используется для связи местоположения.  
 *This is the hotel where we spent our holidays.*
+
+# Прилагательные <a anme='adjectives'></a>
+
+Есть несколько видов прилагательных, первые, прилагательные, которые выражают собственное мнение и фактические прилагательные. Прилагательные мнения ставятся перед фактическими. 
+Последовательность, в которой указываются фактические прилагательные:  
+1) **size:** small, big, short, long, etc.  
+2) **weight:** heavy, light, etc.  
+3) **shape:** triangular, round, rectangular, square, etc.  
+4) **color:** dark/light blue, yellow, pink, etc.
+5) **material:** cotton, leather, silk, plastic, woollen, etc.
+
+## Степени сравнения
+
+cheap - cheap**er** - **the** cheap**est**  
+easy - eas**ier** - **the** eas**iest**  
+intelligent - **more** intelligent - **the most** intelligent
+
+Неправильные прилагательные:  
+good - better - the best  
+bad - worse - the worst  
+much/many - more - the most  
+little - less - the least  
+far - further/farther - the furthest/the farthest
+
+
+
