@@ -1,4 +1,13 @@
-1. [Косвенная речь](#reported-speech)
+ [Времена](#times)   
+ * [Present Simple](#present-simple)  
+ * [Past Perfect Simple](#past-perfect-simple)
+
+ [Условные предложения (Conditions)](#conditions)  
+ [-ing форма глагола](#ing)  
+ [Косвенная речь](#reported-speech)  
+ [Предлоги](#preposition)
+ [Согласие/Несогласие](#agreeing-disagreeing)
+
 
 
 ## Косвенная речь <a name='reported-speeck'></a>
@@ -62,3 +71,271 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 *He begged me not to go.*
 *"Please, don't shout" he said.*
 *He asked them not to shout.*
+
+
+
+
+## Условные предложения (Conditions) <a name='conditions'></a>
+
+0) Постоянная правда или законы природы.
+> if **Present Simple**, **PresentSimple**
+
+1) Употребляется, когда действие относится у настоящему или будущему и это действие реально.
+> (when | if | unless) **Present Simple**/**Present Continious**, (will | can) + verb. in inf.
+
+2) Ситуация нереальна и относится у настоящему или будущему.
+> if **Past Simple**, (could | would | might) + verb. in inf.
+
+## -ing форма глагола <a name='ing'></a>
+
+- **Infinitive c to**
+
+Ставится после глаголов:
+*decide, want, would like, would love, begin, stop, remember, forget, refuse, agree, expect smb.*
+
+- **Infinitive without to**
+
+Ставится после глаголов:
+*make, let* и модальных глаголов: *can, could, will, would, etc.*
+
+- **-ing form**
+
+Ставится после глаголов:
+*love, like, hate, enjoy, etc.*
+
+Ставится после выражений:
+*don't mind, couldn't help, can't stand, look forward to.*
+
+В определенных случаях после глаголов:
+*stop, remember, forget.*
+
+- **Stop**
+
+**to** - прерывание на короткий промежуток времени.   
+**-ing** - окончание действия.
+
+- **Remember**
+
+**to** - не забыть сделать что-то.  
+**-ing** - держать что-то в голове.
+
+- **Forget**
+
+**to** - не помнить.   
+**-ing** - всегда помнить.
+
+## Предлоги <a name='#preposition'></a>
+ ### Предлоги времени
+ **AT**  
+ * Bремя: *at 7 o'clock*  
+ * Праздники: *at Christmas, at the weekend*
+ * В выражениях: *at the moment, at present, at dawn, at noon, at night, at midnight*
+
+ **IN**  
+ * Месяцы: *in September, in March*  
+ * Времена года: *in the winter/spring*  
+ * Годы: *in 1996*  
+ * Века: *in the 20th century*  
+ * В выражениях: *in the morning/afternoon/evening, in an hour/ in a minute/ in a week/ few days/ month/ year*
+
+ **ON**  
+ * Дни: *on Monday, on New Year'd Day*  
+ * Даты: *on May 6th*  
+ * Части суток конкретного дня: *on Tuesday evening*  
+ * Прилагательное + day: *on a hot day*
+
+ **Предлоги времени не употребляются с**
+ * Со словами *today, tomorrow, tonight, yesterday*
+ * Перед словами *this, last, next, every, all, some, each, one, any*
+
+ ### Предлоги места
+ **AT**
+ * В выражениях: *at school/university/college, at work, at home, at the top of ..., at the bottom of ...*
+ * С адресами, когда указывается номер дома: *at 20, Oxford Street, **HO** in Oxford Street*
+
+ **IN**
+ * В выражениях: *in the middle, in the air, in the sky, in bed, in hospytal, in prison, in a newspaper/magazine, in a picture*
+ * С названиями городов, стран и континентов: *in England, in Europe*
+
+ **ON**
+ * В выражениях: *on the left, on the right, on the first/second и т.д. floor*
+ * Мы говорим *on  chair **HO** in the armchair*
+
+ **ON (на):** The vase is on the table.   
+ **IN FRONT (перед):** Tom is in front of Paul.   
+ **BEHIND (перед):** Paul is behind Tom.  
+ **UNDER (под):** The cat is under the table.  
+ **BESIDE/NEXT TO (рядом):** The armchair is beside/next to the fireplace.
+ **NEAR/CLOSE (рядом):** The lamp is hear the fireplace.   
+ **AT (рядом):** The man is at the door.  
+ **BETWEEN (между):** The house is between the bank and the post office.  
+ **Among (среди):** The teacher is standing among the students.
+
+
+ ### Предлоги движения
+
+ **OVER (через, например, лужу):** The plane is flying over the city.  
+ **ALONG (вдоль):** The car is going along the street.  
+ **ACROSS (пересекать):** The man is walking across the street.  
+ **ROUND (за углом/вокруг):** The policeman is coming round the corner.  
+ **ONTO (по направлению на):** The thief is jumping onto the truck.  
+ **THROUGH (через):** The bus is going through a tunnel.  
+ **FROM (из/ от):** The bus is going from London to Oxford.  
+ **UP (вверх):** The boy is going up the hill.  
+ **DOWN (вниз):** The girl is going down the hill.  
+ **INTO (по напрвлению в):** The man is getting into the taxi.  
+ **OUT OF (по направлению из):** The woman is getting out of the taxi.
+
+ Когда имеется в виду способ передвижения, используется предлог **BY**:
+ *be car/bus/train/taxi ... **HO** on foot*
+
+
+
+# Времена <a name='times'></a>
+
+## Present Perfect Simple <a name='present-perfect-simple'></a>
+Время используется:
+* для действия, которое произошло в неустановленное время в прошлом. Время в данном случае не имеет значение, важно само действие.
+* для действия, которое началось в прошлом и до сих пор продолжается.
+* для действия, которое закончилось относительно недавно и его результат виден в будущем.
+* В разговоре об опыте. ( *Я проехал через всю Европу* )
+
+**(+)** I/you/she/he/it/we/they **have/has ('ve/'s)** **V** (in 3 form)  
+**(-)** I/you/she/he/it/we/they **have/has not (haven't/hasn't)** **V** (in 3 form)  
+**(?)** **Have/Has** I/you/she/he/it/we/they **V** (in 3 form)?
+
+Используемые выражения:  
+*for, since, just, already, yet, lately, recently, so far, ever, etc.*
+
+**FOR** (при продолжительности действия): I have known Sue for ten years.  
+**SINCE** (указывает точку времени начала действия): She hasn't been to New York since 1992.  
+**JUST/ALERADY** (в утвердительных предложениях): She's already booked a table for two. I've just bought a new dress.  
+**YET** (в вопросах и отрицательных выражениях): Has Jim fixed the car yet? They haven't cooked dinner yet.
+
+
+## Present Perfect Continious <a name='present-perfect-continious'></a>
+Время используется:
+* для действия, которое началось в прошлом и продолжается до настоящего.
+* для действия, которое закончилось относительно недавно и результат очевиден в настоящем.  
+
+(P.S., по сути тот же Present Perfect Simple, но при этом указывается время, в течении которого действие происходило)
+
+**(+)** I/you/she/he/it/we/they **have/has ('ve/'s) been** **V** (-ing)  
+**(-)** I/you/she/he/it/we/they **have/has not (haven't/hasn't) been** **V** (-ing)  
+**(?)** **Have/Has** I/you/she/he/it/we/they **been V** (-ing)?
+
+Используемые выражения:  
+*for, since, all morning/afternoon/week/day, etc.*
+
+Пример:  
+*They are tired. They have been working for nine hours*
+
+
+## Past Simple <a name='past-simple'></a>
+Время используется:
+* для действия, которое произошло или закончилось в прошлом в определенное время.
+* для действие, которое периодически происходило в прошлом, но больше не повторяется. (*often, always, usually, etc.*)
+
+**(+)** I/you/she/he/it/we/they **V** (-ed, in 2 form)  
+**(-)** I/you/she/he/it/we/they **did not (didn't)** **V** (-ed, in 2 form)  
+**(?)** **Did** I/you/she/he/it/we/they **V** (-ed, in 2 form)?
+
+Используемые выражения:  
+*yesterday, last night/week/year/month, a month/two years ago, in 1964 etc.*
+
+Пример:   
+*Fleming discovered penicillin in 1928.*
+
+### USED TO
+Используется, когда разговор идет о прежних привычках или событиях/действиях, которые не происходят больше.
+
+**(+)** I/you/she/he/it/we/they **used to V** (inf.)  
+**(-)** I/you/she/he/it/we/they **did not (didn't) use to** **V** (inf.)
+**(?)** **Did** I/you/she/he/it/we/they **use to V** (inf.)?
+
+## Past Perfect Simple <a name='past-perfect-simple'></a>
+Время используется:
+* для действия, которое произошло в прошлом перед другим действием в прошлом. Действие, которое произошло ранее дейтсвия, которое произошло позднее.
+* для действия, которое началось и закончилось в прошлом.
+
+
+**(+)** I/you/she/he/it/we/they **had ('d)** **V** (in 3 form)  
+**(-)** I/you/she/he/it/we/they **had not (hidn't)** **V** (in 3 form)  
+**(?)** **Had** I/you/she/he/it/we/they **V** (in 3 form)?
+
+Используемые выражения:  
+*already, by the time, never, as soon as, just, after, when, before, etc.*
+
+Пример:  
+*They had booked a room before they went on holiday.*
+
+
+## Future Simple <a name='future-simple'></a>
+Время используется:
+* для действия, которое верим, что должно произойти или предполагаем.
+* спонтанное решение или обещание.
+* в вежливых вопросах, когда просим кого-то что-то сделать для нас (Will you...?)
+
+
+**(+)** I/you/she/he/it/we/they **will** **V** (inf.)  
+**(-)** I/you/she/he/it/we/they **will not (won't)** **V** (inf.)  
+**(?)** **Will** I/you/she/he/it/we/they **V** (inf.)?
+
+Используемые выражения:  
+*tomorrow, the day after tomorrow, next week/month/year, tonight, soon, in a week/month/year, etc.*
+
+Пример:  
+*Robots will do most of the work in the future.*
+
+### BE GOING TO
+Используется для выражения планов и намерений на ближайшее будущее.
+
+
+**(+)** I/you/she/he/it/we/they **am/is/are going to** **V** (inf.)  
+**(-)** I/you/she/he/it/we/they **am/is/are not going to** **V** (inf.)  
+**(?)** **Am/Is/Are** I/you/she/he/it/we/they **going to V** (inf.)?
+
+### Использование времене относительно вероятности события 
+**Future Simple** - желание, предположения, низкая вероятность либо событие не скоро и всё может измениться.  
+**Be going to** - собираюсь, какие-то планы.  
+**Present Continious** - заплонировано, известно точное время, например, куплены уже билеты.
+
+# Согласие/Несогласие <a name='agreeing-disagreeing'></a>
+
+* Cогласие c положительным утверждением:  
+**So do I / So does she** (Как и я)  
+*-Jim lives in Warsaw.  
+ -So do I.*
+
+* Согласие с отрицательным утверждением:
+**Neither/Nor do I / Neither/Nor does she** (Ни я)  
+*-Eve doesn't like going to the cinema.  
+ -Nor does Ann.*
+* Несогласие с кем-либо:  
+**I do/I don't**  
+*-I never walk to school.  
+ -I do.*
+
+# Описание расположения
+Используются фразы:
+* *is situated/located*
+* *in the east/west/south-east ... of*
+* *on the north/south/south-west ... coast of*
+* *in the heart/center of*
+
+Пример:  
+*The art gallery is located in the heart of the city.*
+
+# Someone / Something / Somewhere
+* **Someone / Something / Somewhere** используется в положительных предложениях.
+* **Anyone / Anybody / Anything / Anywhere** используется в вопросах и отрицательных предложениях.
+* **No one / Nobody / Nothing / Nowhere**  используется в отрицательных предложениях, как альтернатива *Not anyone / Not anybody / Not anything / Not anywhere*
+
+
+# Относительные местоимения <a name='relative-pronouns'></a>
+**WHO** используется для связи людей.  
+*A porter is someone who carries luggage.*  
+**WHICH** используется для связи объектов или животных.  
+*A clock is something which shows the time.*  
+**WHERE** используется для связи местоположения.  
+*This is the hotel where we spent our holidays.*
