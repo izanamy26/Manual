@@ -97,25 +97,38 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 ## -ing форма глагола <a name='ing'></a>
 
 - **Infinitive c to**
+    * Ставится после глаголов:  
+*decide, ask, help, hope, tell, manage, offer, invite, promise, try, want, would like, would love, begin, stop, remember, forget, refuse, agree, expect smb.*
 
-Ставится после глаголов:
-*decide, want, would like, would love, begin, stop, remember, forget, refuse, agree, expect smb.*
+    * После слов:  
+    *too, enough*
+
+   * Чтобы выразить цель, т.е. объяснить зачем кто-то что-то делает. (*He is going to the bank to get some money.*)
+
+   * После:   
+   *would like / would love*, т.е. хотел бы что-то сделать.
 
 - **Infinitive without to**
 
-Ставится после глаголов:
-*make, let* и модальных глаголов: *can, could, will, would, etc.*
+    * Ставится после глаголов:
+*make, let* и модальных глаголов: *can, could, will, would, must, needn't, shall, may, etc.*
 
 - **-ing form**
 
-Ставится после глаголов:
+    * Ставится после глаголов:   
 *love, like, hate, enjoy, etc.*
 
-Ставится после выражений:
+    * Ставится после выражений:   
 *don't mind, couldn't help, can't stand, look forward to.*
 
-В определенных случаях после глаголов:
+    * В определенных случаях после глаголов:   
 *stop, remember, forget.*
+
+    * Как существительное
+
+    * После глагола  *go*
+
+    * После предлогов (*I'm thinking of going to Italy.*)
 
 - **Stop**
 
@@ -303,10 +316,13 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 **(-)** I/you/she/he/it/we/they **am/is/are not going to** **V** (inf.)  
 **(?)** **Am/Is/Are** I/you/she/he/it/we/they **going to V** (inf.)?
 
-### Использование времене относительно вероятности события 
-**Future Simple** - желание, предположения, низкая вероятность либо событие не скоро и всё может измениться.  
+### Использование временен аналогов будущего времени
+**Future Simple** - желание, предположения, низкая вероятность либо событие не скоро и всё может измениться. Используется, когда *when* указано как вопросительное слово, иначе **Present Simple**. Используется с *if(whether)*, после выражений, которые указывают на игнорирование, необязательность, например, *I don't know, I wonder, I doubt, etc.*
 **Be going to** - собираюсь, какие-то планы.  
 **Present Continious** - заплонировано, известно точное время, например, куплены уже билеты.
+**Present Simple** - используется, для действий, которые происходят по определенному расписанию.
+**Present Simple or Present Perfect Simple** - используется после слов или выражений: *while, before, after, until/till, as, unless, when, whenever, if, supppose/supposing, once, as soon as, as long as, be the time, in, case, on condition that, etc.*
+
 
 # Согласие/Несогласие <a name='agreeing-disagreeing'></a>
 
@@ -359,7 +375,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 5) **material:** cotton, leather, silk, plastic, woollen, etc.
 
 ## Степени сравнения
-
+*adjective* - *comparative* - *superlative*  forms  
 cheap - cheap**er** - **the** cheap**est**  
 easy - eas**ier** - **the** eas**iest**  
 intelligent - **more** intelligent - **the most** intelligent
@@ -371,5 +387,22 @@ much/many - more - the most
 little - less - the least  
 far - further/farther - the furthest/the farthest
 
+Превосходная степень используется **the (adjective) of/in**.  
+*Pluto is the coldest planet in solar system.*
+
+Указать, что два человека/вещи есть одно или не одно и тоже, используется **(not) as (adjective) as**.  
+*Tom is as tall as Peter.*
+
+**less (adjective) than**  
+*The green jacket is less expensive than the yellow jacket.*
+
+**much (comparative) than**  
+*This tie is much longer than that one.*
+
+
+# Do / Make
+**Do:** best/worst, business with sb., a crossword, damage to, an execise, an experiment, good, hair, harm, homework, housework, a job, lessons, sth for a living, miracles (for), research, right/wrong, a service, the shopping, a translation, the washing-up, work, etc.    
+
+**Make:** an appointment, an arrangement, the beds, a cake, certain, changes, coffee, a dial with sb, a decision, a discovery, an effort, an excuse, a fortune, an impression, improvements, a joke, a mess, a mistake, money, a noise, an offer, peace, preparations, progress, a success of sth, sure, a translation, truble, war, etc.
 
 

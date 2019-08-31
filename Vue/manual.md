@@ -64,9 +64,9 @@ Vue.component('todo-item', {
 ```html
 <button v-bind:disabled="isButtonDisabled">Кнопка</button>
 ```
-Также есть одна особенность, если значением isButtonDisabled будет null, undefined или false, то атрибут disabled не добавится в элемент <button>.
+Также есть одна особенность, если значением isButtonDisabled будет null, undefined или false, то атрибут disabled не добавится в элемент ```<button>```.
 
-**v-if** - 
+**v-if** - используется
 
 **v-for** - использует данные из массива, для отображения списков.
 
