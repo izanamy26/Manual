@@ -1,9 +1,13 @@
 # Vue 
 <a href="https://ru.vuejs.org/">https://ru.vuejs.org/</a>
 ***
-[Компоненты](#components)
-[Директивы](#directives)
-
+* [Компоненты](#components)
+* [Модификаторы](#modifycators)
+* [Директивы](#directives)
+* [Вычисляемые свойства](#computed)
+* [Наблюдатели](#watch)
+* [Стили](#styles)
+* [Отрисовка списков](#for)
 
 
 
@@ -23,7 +27,7 @@ VueJS представляет CLI для установки vue и начала
 
 ***
 
-## Компоненты <a name="components"></a>
+# Компоненты <a name="components"></a>
 ```javascript
 // Определяем новый компонент под именем todo-item
 Vue.component('todo-item', {
@@ -48,8 +52,16 @@ Vue.component('todo-item', {
 
 <img alt='Жизненный цикл компанента' src="manual/images/life.png"/>
 
+# Модификаторы <a name='modifycators'></a>
 
-## Директивы <a name="directives"></a>
+Модификаторы — особые постфиксы, добавляемые после точки, обозначающие, что директива должна быть связана каким-то определённым образом.  
+
+```html
+<!-- модификатор .prevent говорит директиве v-on вызвать event.preventDefault() при обработке произошедшего события -->
+<form v-on:submit.prevent="onSubmit"> ... </form>
+```
+
+# Директивы <a name="directives"></a>
 
 Директивы — это специальные атрибуты с префиксом ```v-```. В качестве значения они принимают одно выражение JavaScript (за исключением v-for). Директива реактивно применяет к DOM изменения при обновлении значения этого выражения. 
 
@@ -59,16 +71,26 @@ Vue.component('todo-item', {
 <a v-bind:[attributeName]="url"> ... </a>
 ```
 
-**v-bind** - используется для добавления атрибутов,  реактивного обновления атрибутов HTML.
+```html
+<!--
+В шаблонах DOM это преобразуется браузером в v-bind:[someattr].
+Если в экземпляре не будет свойства "someattr", такой код не заработает.
+-->
+<a v-bind:[someAttr]="value"> ... </a>
+```
+
+* **v-bind** - используется для добавления атрибутов,  реактивного обновления атрибутов HTML.
 
 ```html
 <button v-bind:disabled="isButtonDisabled">Кнопка</button>
 ```
 Также есть одна особенность, если значением isButtonDisabled будет null, undefined или false, то атрибут disabled не добавится в элемент ```<button>```.
 
-**v-if** - используется
+* [**v-if**](#if) - используется для рендеринга блока по условию.
 
-**v-for** - использует данные из массива, для отображения списков.
+* [**v-show**](#v-show) - используется для отображения блока по условию, при этом блок всегда находится в DOM.
+
+* **v-for** - использует данные из массива, для отображения списков.
 
 ```app4.todos.push({ text: 'Profit' })``` добавит новый элемент в список.
 ```html
@@ -93,9 +115,9 @@ var app4 = new Vue({
 })
 ```
 
-**v-once** -
+* **v-once** -
 
-**v-on** - используется для отслеживания событий.
+* **v-on** - используется для отслеживания событий.
 ```html
 <div id="app-5">
   <p>{{ message }}</p>
@@ -116,7 +138,7 @@ var app5 = new Vue({
 });
 ```
 
-**v-model** - связывает элементы форм и состояние приложения.
+* **v-model** - связывает элементы форм и состояние приложения.
 ```html
 <div id="app-6">
   <p>{{ message }}</p>
@@ -132,12 +154,12 @@ var app6 = new Vue({
 });
 ```
 
-**v-once** -  переменная подменяется однократно, не обновиляется при изменении данных. Но это повлияет сразу на все связанные переменные в рамках данного элемента
+* **v-once** -  переменная подменяется однократно, не обновиляется при изменении данных. Но это повлияет сразу на все связанные переменные в рамках данного элемента
 ```html
 <span v-once>Это сообщение никогда не изменится: {{ msg }}</span>
 ```
 
-**v-html** - для подстановки HTML.
+* **v-html** - для подстановки HTML.
 ```html
 <p>Директива v-html: <span v-html="rawHtml"></span></p>
 ```
@@ -145,3 +167,139 @@ var app6 = new Vue({
 
 >Динамическая отрисовка произвольного HTML-кода на сайте крайне опасна, так как может легко привести к XSS-уязвимостям. Использовать интерполяцию HTML можно только для доверенного кода, и нельзя подставлять туда содержимое, создаваемое пользователями.
 
+# Вычисляемые свойства <a name='computed'></a>
+
+Вычисляемые свойства кэшируются, основываясь на своих реактивных зависимостях. 
+
+
+Вычисляемое свойство пересчитывается лишь тогда, когда изменится одна из его реактивных зависимостей. 
+
+```html
+<div id="demo">{{ fullName }}</div>
+```
+
+```javascript
+var vm = new Vue({
+  el: '#demo',
+  data: {
+    firstName: 'Foo',
+    lastName: 'Bar',
+    fullName: 'Foo Bar'
+  },
+computed: {
+  fullName: {
+    // геттер:
+    get: function () {
+      return this.firstName + ' ' + this.lastName
+    },
+    // сеттер:
+    set: function (newValue) {
+      var names = newValue.split(' ')
+      this.firstName = names[0]
+      this.lastName = names[names.length - 1]
+    }
+  }
+}
+})
+```
+При изменении this.firstName или this.lastName будет вызван геттер.  
+Запись vm.fullName = 'Иван Иванов' вызовет сеттер, и vm.firstName и vm.lastName будут соответствующим образом обновлены.
+
+# Наблюдатели <a name='watch'></a>
+
+Эта возможность полезна для «дорогих» или асинхронных операций, выполняемых в ответ на изменение данных.
+Пример использования, но в данном случае лучше использовать вычисляемые свойства.
+```html
+<div id="demo">{{ fullName }}</div>
+```
+```javascript
+var vm = new Vue({
+  el: '#demo',
+  data: {
+    firstName: 'Foo',
+    lastName: 'Bar',
+    fullName: 'Foo Bar'
+  },
+  watch: {
+    firstName: function (val) {
+      this.fullName = val + ' ' + this.lastName
+    },
+    lastName: function (val) {
+      this.fullName = this.firstName + ' ' + val
+    }
+  }
+})
+```
+
+# Стили <a name='styles'></a>
+
+Для динамической установки или удаления CSS-классов можно передавать объект в директиву v-bind:class:   
+```html
+<!--  Наличие класса active будет определяться истинностью параметра isActiveю. -->
+<div v-bind:class="{ active: isActive }"></div>
+```
+v-bind:class можно использовать совместно с обычным атрибутом class:
+```html
+<div
+  class="static"
+  v-bind:class="{ active: isActive, 'text-danger': hasError }"
+></div>
+```
+В v-bind:class можно передать и массив:
+```html
+<div v-bind:class="[activeClass, errorClass]"></div>
+<div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+```
+```javascript
+data: {
+  activeClass: 'active',
+  errorClass: 'text-danger'
+}
+```
+
+### inline-стили
+Объектная запись для v-bind:style является объектом JavaScript.
+```html
+<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+```
+```javascript
+data: {
+  activeColor: 'red',
+  fontSize: 30
+}
+```
+Можно использовать и вычисляемые свойства, возвращающие объекты стилей.
+
+# Условная отрисовка <a name='if'></a>
+
+> Псевдоэлемент ```<template>``` служит невидимой обёрткой и сам в результатах отрисовки не появляется.
+
+Блок будет отображаться только в том случае, если выражение директивы возвращает значение, приводимое к true.
+
+```html
+<div v-if="type === 'A'">
+  A
+</div>
+<div v-else-if="type === 'B'">
+  B
+</div>
+<div v-else-if="type === 'C'">
+  C
+</div>
+<div v-else>
+  Не A/B/C
+</div>
+```
+
+**v-else**, **v-else-if** должен следовать сразу за элементом с **v-if** или **v-else-if**.
+
+### v-show <a name='v-show'></a>
+
+```html
+<h1 v-show="ok">Привет!</h1>
+```
+Разница в том, что элемент с v-show будет всегда оставаться в DOM, а изменяться будет лишь свойство display в его параметрах CSS.
+
+**v-show** не работает на элементе ```<template>``` и не работает с **v-else**.
+
+# Отрисовка списков <a name='for'></a>
