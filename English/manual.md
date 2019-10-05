@@ -6,6 +6,7 @@
     * [Past Perfect Simple](#past-perfect-simple)
     * [Future Simple](#future-simple)
 
+ * [Артикли a, an  и the](#a-an-the)
  * [Косвенная речь](#reported-speech) 
  * [Условные предложения (Conditions)](#conditions)  
  * [-ing форма глагола](#ing)  
@@ -15,8 +16,12 @@
  * [Someone / Something / Somewhere](#someone-somewhere)
  * [Относительные местоимения](#relative-pronouns)
  * [Прилагательные](#adjectives)
+ * [Придаточные предложения](#result-clauses)
+ * [Восклицания](#exclamations)
 
 
+
+## Артикли a, an  и the <a name='a-an-the'></a>
 
 ## Косвенная речь <a name='reported-speeck'></a>
 Косвенная речь передает содержание чьего-либо высказывания, но не точные слова.
@@ -364,7 +369,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 **WHERE** используется для связи местоположения.  
 *This is the hotel where we spent our holidays.*
 
-# Прилагательные <a anme='adjectives'></a>
+# Прилагательные <a name='adjectives'></a>
 
 Есть несколько видов прилагательных, первые, прилагательные, которые выражают собственное мнение и фактические прилагательные. Прилагательные мнения ставятся перед фактическими. 
 Последовательность, в которой указываются фактические прилагательные:  
@@ -405,4 +410,114 @@ far - further/farther - the furthest/the farthest
 
 **Make:** an appointment, an arrangement, the beds, a cake, certain, changes, coffee, a dial with sb, a decision, a discovery, an effort, an excuse, a fortune, an impression, improvements, a joke, a mess, a mistake, money, a noise, an offer, peace, preparations, progress, a success of sth, sure, a translation, truble, war, etc.
 
+# Придаточные предложения <a name='result-clauses'></a>
 
+## Результат
+
+*Forest are being destroyed. **As a result/Therefore/Consequently** a lot of animals are losing their homes.*
+
+Т.е. притяжательные выражения использутся для выражения результат чего-то.
+
+**So (поэтому, таим образом)** :  
+*I was tired, **so** I went to bed early.*  (Я был настолько уставший, **поэтому** лег в кровать раньше.)
+
+**So** + adj./adv.
+*She is **so clever** (that) everyone admires her.*
+
+**So much/little (настолько много)** + uncount. noun
+**So many/few (настолько мало)** + plural
+*There was **so much smoke** in the room (that) I couldn't breathe.*
+*He has **so few friends** (that) he feels lonely at times.*
+
+**Such a/an (такой, настолько)** + adj. + singular countable noun
+*She is **such a nice girl** (that) everybody likes her.* (Она **такая** милая девушка, всем она нравится.)
+
+**Such (такой, настолько)** + adj. + plural/uncountable noun
+*They are **such friendly people** (that) they make you feel welcome.*
+*It was **such hot weather** (that) we went swinning.* (Это была **настолько** жаркая погода, что мы ходили плавать)
+
+**Such a lot of (так много)** + plural/uncountable noun  
+*They gave me **such a lot of presents** (that) I couldn't carry them home.* (Они подарили мне **так много** подарков, Я не мог донести их домой.)
+
+**As a result/therefore/consequently (в следствии/следовательно/вследствие этого)**
+*Certain species of animals are being killed for their fur, and **as a result/therefore/consequently** they are becoming extinct.* (Некоторые виды животных убиты ради их меха, в следствие этого они стали вымирающими.)
+
+## Причина
+
+*The air is becoming polluted **because of** factories.*  
+*The air is becoming polluted **due to the fact that** there are a lot of factories.*
+
+**as/since (как (так как)/псокольку)**  
+*She took a taxi home **as/since** it was late.*   
+***As/Since** it was late, she took a taxi home*
+
+**because**
+*I went to bed early **because** I was tired.*
+
+**the reason for** + noun/-ing form   
+***The reason for her delay** was (the fact) that she had missed the train.* (Причина её задержки та, что она пропустила поезд.)  
+*The fact that she had missed the train was **the reason for** her **being** delayed.* (Тот факт, что она пропустила поезд, был причиной её задержки.)
+
+**the reason why** + clause  
+***The reason why she was** delayed was (the fact) that she had missed the train.* (Причина почему она задержалась в том, что она пропустила поезд.)
+
+**because of/due to (потому что/из-за (должен))** + noun  
+*The came home late **because of the traffic**.*   
+*They came home late **due to the traffic**.*  
+*She was promoted **because of the fact that** she works hard.*  
+*She was promoted **due to the fact that** she works hard.* (Её повысили из-за того факта, что она работает усердно.)
+
+## Цель
+Указывает цель для которой производится действие.  
+*They went to the beach **to** enjoy the sunset.*  
+*They went to the beach **so that** they could enjoy the sunset.*  
+
+**to** -infinitive.   
+*I'm going out **to get** some fresh air.*  
+
+**in order to/so as to (для того, чтобы / с тем чтобы)** (formal)   
+*He went to Harvard **in order to/so as to** obtain a degree in economics.* (Он отправился в Гарвард для того, чтобы получить степень в экономике.)  
+В отрицательных предложениях используется **in order not to / so as not to**.  
+*He took a taxi **in order not to / so as not to** be late*.
+
+**so that (так что)** + can/will (Present or Future reference)  
+*He works hard **so that** he **can** make a lot of money.* (Он работал усердно так что он может получить много денег.)  
+
+**so that (так что)** + could/would (Past reference)  
+*She reserved a table **so that** she **wouldn't** have to wait in a queue.* (Она зарезервировала стол так что ей не надо было ждать в очереди.)
+
+**in case (в случае)** + present tense (Present or Future reference)   
+**in case (в случае)** + past tense (past reference)   
+Никогда не используется с **will** и **would**.  
+
+***for** + noun  
+*They went to an Indian restaurant **for dinner**.*  
+
+**for** + -ing form  
+*We use an axe **for chopping** wood.* (Мы используем топор чтобы рубить дрова.)
+
+
+# Восклицания <a name='exclamations'></a>
+
+С существительными используется **What / Such**, в единственном числе используется артикль **a/an**. С причастиями и прилагательными используется **How / So**.
+
+**How** + adj./adv.  
+*How tall she is! How carefully he drives!*
+
+**What a/an** + [adj.] + singular countable noun  
+*What a pretty baby! What an amazing story! What an experience!*  
+
+**What** + [adj.] + uncountable/plural noun  
+*What horrible weather!*
+
+**So** + adj./adv.  
+*She's so polite!*
+
+**Such a/an** + [adj.] + singular countable noun  
+*He's such a generous man!*
+
+**Such** + [adj.] + uncountable/plural noun  
+*They're such polite children!*
+
+**Negative question**  
+*Isn't it great to be here!*
