@@ -2,6 +2,7 @@
 <a href="https://ru.vuejs.org/">https://ru.vuejs.org/</a>
 ***
 * [Компоненты](#components)
+* [Входные параметры](#params)
 * [Модификаторы](#modifycators)
 * [Директивы](#directives)
 * [Вычисляемые свойства](#computed)
@@ -9,6 +10,7 @@
 * [Стили](#styles)
 * [Отрисовка списков](#for)
 * [Обработка событий](#event)
+* [Пользовательские события](#users-event)
 
 
 
@@ -51,6 +53,137 @@ Vue.component('todo-item', {
 4) обновляется DOM при изменении данных.
 
 <img alt='Жизненный цикл компанента' src="manual/images/life.png"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Входные параметры <a name='params'></a>
+При использовании шаблонов в DOM входные параметры в camelCase-стиле в компоненте должны использовать свои эквиваленты в стиле kebab-case (разделённые дефисами).
+
+Указание типа входных параметров:
+```javascript
+props: {
+  title: String,
+  likes: Number,
+  isPublished: Boolean,
+  commentIds: Array,
+  author: Object,
+  callback: Function,
+  contactsPromise: Promise // или любой другой конструктор
+}
+```
+Для того, чтобы указать Vue, что передается выражение, а не строка, необходимо использовать ```v-bind:```. Это относится к числам, булевым значениям, массивам, объектам.
+
+```html
+<!-- Указание входного параметра без значения будет означать `true`. -->
+<blog-post is-published></blog-post>
+
+<!-- Несмотря на то, что `false` статическое значение, нам нужен v-bind -->
+<!-- чтобы сообщить Vue, что это выражение JavaScript, а не строка.     -->
+<blog-post v-bind:is-published="false"></blog-post>
+```
+
+Все входные параметры образуют одностороннюю привязку между дочерним свойством и родительским: когда родительское свойство обновляется — оно будет передаваться дочернему, но не наоборот. Изменение входного параметра может потребоваться в нескольких случая:
+
+1. Входной параметр используется для передачи начального значения. В этом случае лучше всего определить локальное свойство в данных, которое использует значение входного параметра в качестве начального:
+```javascript
+props: ['initialCounter'],
+data: function () {
+  return {
+    counter: this.initialCounter
+  }
+}
+```
+2. Входной параметр передаётся как необработанное значение, которое необходимо преобразовать. В этом случае лучше всего определить вычисляемое свойство с использованием входного параметра:
+
+```javascript
+props: ['size'],
+computed: {
+  normalizedSize: function () {
+    return this.size.trim().toLowerCase()
+  }
+}
+```
+> Но! Объекты и массивы передаются по ссылке, поэтому изменение в дочернем элементе повлияет на данные родительского. В данном случае необходимо сделать копию, например, с помощью reduce или $.extend.
+
+Валидация входных параметров:
+```javascript
+Vue.component('my-component', {
+  props: {
+    // Просто проверка типа (`null` и `undefined` проходят проверку для любого типа)
+    propA: Number,
+    // Несколько допустимых типов
+    propB: [String, Number],
+    // Обязательное значение строкового типа
+    propC: {
+      type: String,
+      required: true
+    },
+    // Число со значением по умолчанию
+    propD: {
+      type: Number,
+      default: 100
+    },
+    // Объект со значением по умолчанию
+    propE: {
+      type: Object,
+      // Для объектов или массивов значения по умолчанию
+      // должны возвращаться из функции
+      default: function () {
+        return { message: 'hello' }
+      }
+    },
+    // Пользовательская функция для валидации
+    propF: {
+      validator: function (value) {
+        // Значение должно соответствовать одной из этих строк
+        return ['success', 'warning', 'danger'].indexOf(value) !== -1
+      }
+    }
+  }
+})
+```
+>  Входные параметры валидируются перед созданием экземпляра компонента, поэтому свойства экземпляра (например, data, computed и т.д.) не будут доступны внутри default или функций validator.
+
+Отключить наследование атрибутов можно с помощью 
+```javascript
+Vue.component('my-component', {
+  inheritAttrs: false,
+  // ...
+})
+```
+ Cвойство экземпляра ```$attrs``` содержит имена атрибутов и значения, переданные компоненту.
+ Опция ```inheritAttrs: false``` не влияет на биндинги style и class.
+
+С помощью ```inheritAttrs: false``` и ```$attrs``` можно вручную определять к какому элементу должны применяться атрибуты, что часто требуется для базовых компонентов:
+
+```javascript
+Vue.component('base-input', {
+  inheritAttrs: false,
+  props: ['label', 'value'],
+  template: `
+    <label>
+      {{ label }}
+      <input
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+      >
+    </label>
+  `
+})
+```
+
 
 # Модификаторы <a name='modifycators'></a>
 
@@ -411,3 +544,34 @@ methods: {
 *.left, 
 .right, 
 .middle*
+
+
+# Пользовательские события <a name='users-event'></a>
+
+Всегда использовать kebab-case для имён событий.
+
+По умолчанию ```v-model``` на компоненте использует входной параметр ```value``` и событие ```input```.
+
+```javascript
+Vue.component('base-checkbox', {
+  model: {
+    prop: 'checked',
+    event: 'change'
+  },
+  props: {
+    checked: Boolean
+  },
+  template: `
+    <input
+      type="checkbox"
+      v-bind:checked="checked"
+      v-on:change="$emit('change', $event.target.checked)"
+    >
+  `
+})
+```
+Теперь, когда используем ```v-model``` на этом компоненте:
+```html
+<base-checkbox v-model="lovingVue"></base-checkbox>
+```
+Значение lovingVue будет передано во входном параметре checked. А обновляться свойство lovingVue будет когда ```<base-checkbox>``` сгенерирует событие change с новым значением. При этом нужно объявлять входной параметр ```checked``` в опции ```props``` компонента.
