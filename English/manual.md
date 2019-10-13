@@ -23,6 +23,75 @@
 
 ## Артикли a, an  и the <a name='a-an-the'></a>
 
+### A/An
+Используется:
+1. С исчисляемыми существительными в единственном числе, когда об объекте говорят в общем.  
+*An aeroplane is faster than a train.*
+
+2. Часто используется после глаголов **to be**, **to have**.  
+*He is a photographer. He has got a camera.*
+
+### A/An & The
+Может использоваться перед исчисляемыми существительными в единственном числе, которые представляют класс людей, животных или вещей. 
+*A/The dolphin is more intellegent than a/the shark.*  
+или без артиклей  
+*Dolphins are more intellegent than sharks.*
+
+### The
+Используется:
+1. С исчисляемыми и неисчисляемыми существительными в единственном и множественном числе, когда говорят о чем-то специфическом или когда существительное упоминается второй раз.  
+*There is a cat on the sofa. The cat is sleeping.*
+
+2. Со словами **cinama**, **theatre**, **radio**, **country(side)**, **beach**, etc.
+
+3. C уникальными существительными.  
+*Haven't you been to the Acropolis yet?*  
+
+4. C названиями кинотеатров (*the Odeon*), отелей (*the Hilton*), театров (*the Rex*), музеев (*the Prado*), газет (*the Times*), кораблей (*the Queen Mary*).  
+
+5. C названиями рек (*the Thames*), морей (*the Black Sea*), групп островов/штатов (*the Bahamas / the USA*), горной гряды (*the Alps*), пустынь (*the Gobi desert*), океанов (*the Pacific*).  
+
+6. С названиями с **... of**.  
+*The Tower of London.*  
+
+7. C названиями музыкальных инструментов.  
+*Can you play the guitar?*
+
+8. С названиями национальностей, семей или людей во множественном числе.  
+*the Smiths, the English, the Dutch etc.*
+
+9. C названиями должностей без указания имен.  
+*the Queen, the President*  
+
+10. C прилагательными, которые используются как существительные во множественном числе, а так же в превосходной форме с прилагательными и наречиями. 
+*He's the most intelligent student of all.*
+
+Опускается перед:
+1. С личными названиями.  
+*Paula comes from Canada.*  
+
+2. C названиями цветов, деятельности, спортивных соревнования, примаов пищи, субстанциями.  
+*He plays tennis well.*  
+*She likes blue. Coke isn't expensive.*  
+*Lunch is ready.*   
+
+3. C названиями стран (*England*), городов (*London*), улиц (*Bond Street*), парков (*Hide Park*), гор (*Everest*), островов (*Cyprus*), озер (*Lake Michigan*), континентов (*Europe*).
+
+4. C притяжательными прилагательными.  
+*This isn't your coat, it's Kate's.*
+
+5. Cо словами "home" и "Father/Mother", когда говорится о собственном доме и родителях.  
+*Father isn't at home.*
+
+6. C должностями с личными именами.  
+*Queen Elizabeth, President Kennedy*
+
+7. Со словами **bed**, **school**, **church**, **hospital**, **prison**, когда они используются по причине их существования.  
+*John was sent to prison.*   
+**Но:** *His mother went to the prison to visit him last week.*
+
+
+
 ## Косвенная речь <a name='reported-speeck'></a>
 Косвенная речь передает содержание чьего-либо высказывания, но не точные слова.
 
