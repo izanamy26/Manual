@@ -19,6 +19,7 @@
 * [Исключения, обработка ошибок](#exseption)
 * [Примеси](#mixin)
 * [Пользовательские директивы](#user-directive)
+* [Render-функции и JSX](#render-jsx)
 
 ***
 VueJS представляет CLI для установки vue и начала работы с активацией сервера. 
@@ -35,8 +36,6 @@ VueJS представляет CLI для установки vue и начала
 
 ***
 [^ Вверх](#home)  
-
-
 
 
 
@@ -68,23 +67,7 @@ Vue.component('todo-item', {
 
 
 
-
-
-
-
-
-
-
-
-
-
 [^ Вверх](#home)  
-
-
-
-
-
-
 # Входные параметры <a name='params'></a>
 При использовании шаблонов в DOM входные параметры в camelCase-стиле в компоненте должны использовать свои эквиваленты в стиле kebab-case (разделённые дефисами).
 
@@ -1200,3 +1183,112 @@ strategies.myOption = strategies.methods;
 ```
 
 # Пользовательские директивы <a name='user-directive'></a>
+```javascript
+// Регистрируем глобальную пользовательскую директиву `v-focus`
+Vue.directive('focus', {
+  // Когда привязанный элемент вставлен в DOM...
+  inserted: function (el) {
+    // Переключаем фокус на элемент
+    el.focus()
+  }
+})
+```
+Чтобы зарегистрировать директиву локально, можно передать опцию directives при определении компонента.
+```javascript
+directives: {
+  focus: {
+    // определение директивы
+    inserted: function (el) {
+      el.focus()
+    }
+  }
+}
+```
+```html
+<input v-focus>
+```
+
+### Хуки жизненного цикла
+
+* **bind** - вызывается однократно, при первичном связывании директивы с элементом. Здесь можно поместить код инициализации.
+
+* **inserted** - вызывается после вставки связанного элемента внутрь элемента родителя.
+
+* **update** - вызывается после обновления VNode компонента-контейнера, но, возможно, до обновления дочерних элементов. Значение директивы к этому моменту может измениться.
+
+* **componentUpdated** - вызывается после обновления как VNode компонента-контейнера, так и VNode его потомков.
+
+* **unbind** - вызывается однократно, при отвязывании директивы от элемента.
+
+В хуки передаются следующие параметры:
+
+* **el** - Элемент, к которому привязана директива, используется для прямых манипуляций с DOM.
+* **binding** - Объект, содержащий следующие свойства:  
+  + **name** - Название директивы, без указания префикса v-.  
+  + **value** - Значение, переданное в директиву. Например, для v-my-directive="1 + 1" значением будет 2.  
+  + **oldValue** - Предыдущее переданное в директиву значение. Доступно только для хуков ```update``` и  ```componentUpdated```, и передаётся независимо от того, произошло ли в действительности его изменение.   
+  + **expression** Выражение-строка, переданное в директиву. Например, для ```v-my-directive="1 + 1"``` это будет "1 + 1".  
+  + **arg** - Аргумент, переданный в директиву, в случае его наличия. Например, для ```v-my-directive:foo``` это будет "foo".  
+  + **modifiers** - Объект, содержащий модификаторы, если они есть. Например, для ```v-my-directive.foo.bar```, объектом модификаторов будет ```{ foo: true, bar: true }```.  
+* **vnode** - Виртуальный элемент, созданный компилятором Vue.   
+* **oldVnode** - Предыдущий виртуальный элемент, доступный только для хуков ```update``` и ```componentUpdated```.
+
+Все аргументы, кроме ```el```, следует понимать как только для чтения и никогда не изменять их. В случае необходимости передать информацию между хуками рекомендуем воспользоваться ```dataset```.
+
+```html
+<div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
+```
+```javascript
+Vue.directive('demo', {
+  bind: function (el, binding, vnode) {
+    var s = JSON.stringify
+    el.innerHTML =
+      'name: '       + s(binding.name) + '<br>' +           //'demo'
+      'value: '      + s(binding.value) + '<br>' +          //'привет!'
+      'expression: ' + s(binding.expression) + '<br>' +     //'message' 
+      'argument: '   + s(binding.arg) + '<br>' +            //'foo'
+      'modifiers: '  + s(binding.modifiers) + '<br>' +      //{'a':true, 'b': true}
+      'vnode keys: ' + Object.keys(vnode).join(', ')        //tag, data, children, text, elm, ns,       context, fnContext, fnOptions, fnScopeId, key, componentOptions, componentInstance, parent, raw, isStatic, isRootInsert, isComment, isCloned, isOnce, asyncFactory, asyncMeta, isAsyncPlaceholder
+  }
+})
+
+new Vue({
+  el: '#hook-arguments-example',
+  data: {
+    message: 'привет!'
+  }
+})
+
+```
+
+### Динамические аргументы директивы
+
+Аргументы директивы могут быть динамическими. ```argument``` может обновляться в зависимости от свойства данных экземпляра компонента
+```v-mydirective:[argument]="value"```
+
+```html
+<div id="dynamicexample">
+  <h3>Прокрутите страницу вниз</h3>
+  <p v-pin:[direction]="200">Элемент зафиксирован в 200px слева страницы.</p>
+</div
+```
+```javascript
+Vue.directive('pin', {
+  bind: function (el, binding, vnode) {
+    el.style.position = 'fixed'
+    var s = (binding.arg == 'left' ? 'left' : 'top')
+    el.style[s] = binding.value + 'px'
+  }
+});
+
+new Vue({
+  el: '#dynamicexample',
+  data: function () {
+    return {
+      direction: 'left'
+    }
+  }
+});
+```
+
+# Render-функции и JSX <a name='render-jsx'></a>
