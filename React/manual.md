@@ -8,7 +8,7 @@
 6. [Обработка событий](#event)
 7. [Методы жизненного цикла](#live-loop-component)
 
-
+* <a src="https://ru.reactjs.org/docs/getting-started.html">Документация React</a>
 * [Полезное](#sweet)
 
 *****
