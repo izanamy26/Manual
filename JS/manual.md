@@ -292,6 +292,38 @@ new Promise(function(resolve, reject) {
 
 Обработчик ```handler```, переданный в ```.then(handler)```, может вернуть промис. В этом случае дальнейшие обработчики ожидают, пока он выполнится, и затем получают его результат.
 
+## Замена callback на промисы
+Промис может иметь только один результат, но колбэк технически может вызываться сколько угодно раз.
+
+```javascript
+function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () => callback(null, script);
+  script.onerror = () => callback(new Error(`Ошибка загрузки скрипта ${src}`));
+
+  document.head.append(script);
+}
+
+// использование:
+// loadScript('path/script.js', (err, script) => {...})
+```
+```javascript
+let loadScriptPromise = function(src) {
+  return new Promise((resolve, reject) => {
+    loadScript(src, (err, script) => {
+      if (err) reject(err)
+      else resolve(script);
+    });
+  })
+}
+
+// использование:
+// loadScriptPromise('path/script.js').then(...)
+```
+
+
 ## Promise API
 ## Promise.all
 Используется для запуска множества параллельных промисов. 
@@ -314,3 +346,74 @@ Gорядок элементов массива ответа в точности
 
 
 Обычно, Promise.all(...) принимает перебираемый объект промисов (чаще всего массив). Но если любой из этих объектов не является промисом, он передаётся в итоговый массив «как есть».
+
+## Promise.allSettled
+Аналогичен Promise.all, но при этом всегда ждёт завершения всех промисов. В массиве результатов будет:
+
+* ```{status:"fulfilled", value:результат}``` для успешных завершений,  
+* ```{status:"rejected", reason:ошибка}``` для ошибок.
+
+```javascript
+let urls = [
+  'https://api.github.com/users/iliakan',
+  'https://api.github.com/users/remy',
+  'https://no-such-url'
+];
+
+Promise.allSettled(urls.map(url => fetch(url)))
+  .then(results => { // (*)
+    results.forEach((result, num) => {
+      if (result.status == "fulfilled") {
+        alert(`${urls[num]}: ${result.value.status}`);
+      }
+      if (result.status == "rejected") {
+        alert(`${urls[num]}: ${result.reason}`);
+      }
+    });
+  });
+
+ // Ответ:
+ //[
+ // {status: 'fulfilled', value: ...объект ответа...},
+ // {status: 'fulfilled', value: ...объект ответа...},
+ // {status: 'rejected', reason: ...объект ошибки...}
+ //] 
+```
+
+Полифилл:
+```javascript
+if(!Promise.allSettled) {
+  Promise.allSettled = function(promises) {
+    return Promise.all(promises.map(p => Promise.resolve(p).then(value => ({
+      state: 'fulfilled',
+      value: value
+    }), error => ({
+      state: 'rejected',
+      reason: error
+    }))));
+  };
+}
+```
+
+## Promise.race
+Метод похож на **Promise.all**, но ждёт только первый промис, из которого берёт результат (или ошибку), остальные промисы игнорируются.
+
+```javascript
+Promise.race([
+  new Promise((resolve, reject) => setTimeout(() => resolve(1), 1000)),
+  new Promise((resolve, reject) => setTimeout(() => reject(new Error("Ошибка!")), 2000)),
+  new Promise((resolve, reject) => setTimeout(() => resolve(3), 3000))
+]).then(alert); // 1
+```
+
+## Promise.resolve/reject
+
+* ```Promise.resolve(value)``` создаёт успешно выполненный промис с результатом value. Аналогичен:
+```javascript
+let promise = new Promise(resolve => resolve(value));
+```
+
+* ```Promise.reject(error)``` создаёт промис, завершённый с ошибкой error. Аналогичен:
+```javascript
+let promise = new Promise((resolve, reject) => reject(error));
+```
