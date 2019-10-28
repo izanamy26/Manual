@@ -1182,6 +1182,9 @@ var strategies = Vue.config.optionMergeStrategies;
 strategies.myOption = strategies.methods;
 ```
 
+
+
+[^ Вверх](#home)
 # Пользовательские директивы <a name='user-directive'></a>
 ```javascript
 // Регистрируем глобальную пользовательскую директиву `v-focus`
@@ -1291,4 +1294,7 @@ new Vue({
 });
 ```
 
+
+[^ Вверх](#home)
 # Render-функции и JSX <a name='render-jsx'></a>
+**render-функции** — это более низкоуровневая альтернатива шаблонам.
