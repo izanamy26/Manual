@@ -1,11 +1,18 @@
 # NodeJS <a name='home'></a>   
-<a href='https://nodejs.org/ru/docs/'>Документация</a>
+<a href='https://nodejs.org/ru/docs/'>Документация</a>  
 <a href='https://nodejs.org/api/'>Модули</a>
 
+<div class='source'>Источники
+  <div class='spoiler'> 
+  <a href='https://metanit.com/web/nodejs/'>metanit.com</a>
+  </div>
+</div>
 
 * [Передача параметров приложению](#argv)
 * [Модули](#moduls)
 * [NPM](#npm)
+* [Работа с файлами](#files)
+* [События](#events)
 
 
 [^ Вверх](#home)  
@@ -96,3 +103,66 @@ npm [название_команды]
 ```
 npm run [название_команды]
 ```
+
+
+[^ Вверх](#home)
+# Работа с файлами <a name='files'></a>
+```fs.readFileSync``` - синхронное чтение из файла.  
+```javascript
+let fileContent = fs.readFileSync("hello.txt", "utf8");
+```
+```fs.readFile``` - асинхронное чтение из файла. 
+```javascript
+fs.readFile("hello.txt", "utf8", function(error,data){ });
+```
+```fs.writeFileSync``` - для синхронной записи данных в файл.
+```javascript
+fs.writeFileSync("hello.txt", "Привет ми ми ми!")
+```
+```fs.writeFile``` - для асинхронной записи данных в файл.
+```javascript
+fs.writeFile("hello.txt", "Привет МИГ-29!", function(error){};
+```
+```fs.appendFile``` - для асинхронной дозаписи данных в файл.  
+```fs.appendFileSync``` - для синхронной дозаписи данных в файл.
+```javascript
+const fs = require("fs");
+ 
+fs.appendFileSync("hello.txt", "Привет ми ми ми!");
+ 
+fs.appendFile("hello.txt", "Привет МИД!", function(error){
+    if(error) throw error; // если возникла ошибка             
+    console.log("Запись файла завершена. Содержимое файла:");
+});
+```
+```fs.unlinkSync``` - для удаления файла в синхронном варианте, в качестве параметра принимает путь к удаляемому файлу.  
+```javascript
+fs.unlinkSync("hello.txt");
+```
+```fs.unlink``` - для асинхронного удаления файла, принимает путь к файлу и функцию, вызываемую при завершении удаления.
+```javascript
+fs.unlink("hello.txt", function(err) {
+  if (err) console.log(err); // если возникла ошибка    
+  else console.log("hello.txt was deleted");
+});
+```
+
+
+[^ Вверх](#home)
+# События <a name='events'></a>
+Подавляющее большинство функционала Node.js применяет асинхронную событийную архитектуру, которая использует специальные объекты - эмиттеры для генерации различных событий, которые обрабатываются специальными функциями - обработчиками или слушателями событий. Все объекты, которые генерируют события, представляют экземпляры класса **EventEmitter**.
+
+
+
+
+
+
+<style>
+  .spoiler {
+    display: none;
+  }
+
+  .source:hover .spoiler {
+    display: block;
+  }
+</style>
