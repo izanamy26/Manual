@@ -374,7 +374,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 
 
 **(+)** I/you/she/he/it/we/they **will** **V** (inf.)  
-**(-)** I/you/she/he/it/we/they **will not (won't)** **V** (inf.)  
+**(-)** I/you/she/he/it/we/they **will not (won't)** **V** (inf.) 
 **(?)** **Will** I/you/she/he/it/we/they **V** (inf.)?
 
 Используемые выражения:  
@@ -406,11 +406,11 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 * когда вежливо просишь кого-то сделать что-то.
 
 **(+)** I/you/she/he/it/we/they **will be** **V** (-ing)  
-**(-)** I/you/she/he/it/we/they **will not (won't)** **V** (ing)  
+**(-)** I/you/she/he/it/we/they **will not (won't)** **V** (ing)    
 **(?)** **Will** I/you/she/he/it/we/they **be V** (ing)?
 
 *This time next week, I'll be skiing in Austria.*  
-*I'll be seeing them at meeting tomorrov.*
+*I'll be seeing them at meeting tomorrov.*   
 *Will you be going out later?*
 
 # Согласие/Несогласие <a name='agreeing-disagreeing'></a>
