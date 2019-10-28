@@ -5,6 +5,7 @@
     * [Past Simple](#past-simple)
     * [Past Perfect Simple](#past-perfect-simple)
     * [Future Simple](#future-simple)
+    * [Future Continuous](#future-continuous)
 
  * [Артикли a, an  и the](#a-an-the)
  * [Косвенная речь](#reported-speech) 
@@ -397,6 +398,20 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 **Present Simple** - используется, для действий, которые происходят по определенному расписанию.
 **Present Simple or Present Perfect Simple** - используется после слов или выражений: *while, before, after, until/till, as, unless, when, whenever, if, supppose/supposing, once, as soon as, as long as, be the time, in, case, on condition that, etc.*
 
+
+## Future Continuous <a name='future-continuous'></a>
+Время используется:  
+* для действия, которое будет происходить длительное время в определенное время в будущем.  
+* для действия, которое определенно будет происходить по договоренности или в обычном порядке, т.е. как всегда.
+* когда вежливо просишь кого-то сделать что-то.
+
+**(+)** I/you/she/he/it/we/they **will be** **V** (-ing)  
+**(-)** I/you/she/he/it/we/they **will not (won't)** **V** (ing)  
+**(?)** **Will** I/you/she/he/it/we/they **be V** (ing)?
+
+*This time next week, I'll be skiing in Austria.*  
+*I'll be seeing them at meeting tomorrov.*
+*Will you be going out later?*
 
 # Согласие/Несогласие <a name='agreeing-disagreeing'></a>
 
