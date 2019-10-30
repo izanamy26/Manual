@@ -13,6 +13,10 @@
 * [NPM](#npm)
 * [Работа с файлами](#files)
 * [События](#events)
+* [Stream (Потоки)](#stream)
+* [Pipe (Канал)](#pipe)
+* [Сервер](#server)
+* [Express](#express)
 
 
 [^ Вверх](#home)  
@@ -152,17 +156,235 @@ fs.unlink("hello.txt", function(err) {
 # События <a name='events'></a>
 Подавляющее большинство функционала Node.js применяет асинхронную событийную архитектуру, которая использует специальные объекты - эмиттеры для генерации различных событий, которые обрабатываются специальными функциями - обработчиками или слушателями событий. Все объекты, которые генерируют события, представляют экземпляры класса **EventEmitter**.
 
+```eventEmitter.on()``` - для добавления обработчиков.  
+```emitter.emit(nameEvent, param)``` - эмитация / триггер события. Где **name** - название события, **param** - параметры, может быть объектом, котрые передаются в функцию обработчик.
+
+```javascript
+const Emitter = require("events");
+let emitter = new Emitter();
+let eventName = "greet";
+emitter.on(eventName, function(data){ //data  - передаваемые параметры в функцию-обработчик
+    console.log("Hello all!");
+});
+ 
+emitter.on(eventName, function(data){
+    console.log("Привет!");
+});
+ 
+emitter.emit(eventName);
+```
+
+**Наследование от EventEmitter**  
+В приложении мы можем оперировать сложными объектами, для которых также можно определять события, но для этого их надо связать с объектом EventEmitter. 
+
+ES5 вариант:
+```javascript
+const util = require("util");
+const EventEmitter = require("events");
+ 
+function User(){
+}
+util.inherits(User, EventEmitter); // связывание с EventEmitter
+ 
+let eventName = "greet";
+User.prototype.sayHi = function(data){
+    this.emit(eventName, data);
+}
+let user = new User();
+// добавляем к объекту user обработку события "greet"
+user.on(eventName, function(data){ // подписка на событие из экземпляра другого объекта
+    console.log(data);
+});
+ 
+user.sayHi("Мне нужна твоя одежда...");
+```
+ES2015 вариант (упрощается работа, так как классы позволяют отнаследоваться, поэтому не требуется модуль **util**):
+```javascript
+const EventEmitter = require("events");
+  
+let eventName = "greet";
+ 
+class User extends EventEmitter {
+    sayHi(data) {
+        this.emit(eventName, data);
+    }
+}
+ 
+let user = new User();
+// добавляем к объекту user обработку события "greet"
+user.on(eventName, function(data){
+    console.log(data);
+});
+  
+user.sayHi("Мне нужна твоя одежда...");
+```
+
+[^ Вверх](#home)
+# Stream (Потоки) <a name='stream'></a>
+
+Потоки данных бывают различных типов, среди которых можно выделить потоки для чтения и потоки для записи.
+  
+```javascript
+const http = require("http");
+ 
+http.createServer(function(request, response){
+     }).listen(3000);
+  ```
+  Параметры request и response, которые передаются в функцию и с помощью которых можно получать данные о запросе и управлять ответом, представляют собой потоки: request - поток для чтения, а response - поток для записи.
+
+  Для записи и считывания данных из потока так же могут применяться потоки.  
+
+  ```fs.createWriteStream(fileName)``` - создает поток для записи в файл, если файла нет, то он создается.  
+  ```write(data)``` - используется для записи в файл.  
+  ```end(data)``` - используется для оканчания записи.
 
 
+```fs.createReadStream(fileName, charset)``` - содает поток для чтения из файла, передаются название файла и кодировка.
+
+Сам поток разбивается на ряд кусков или чанков (**chunk**). И при считывании каждого такого куска, возникает событие **data**. С помощью метода ```on()``` можно подписаться на это событие и вывести каждый кусок данных в консоль.
+
+```javascript
+const fs = require("fs");
+ 
+let writeableStream = fs.createWriteStream("hello.txt");
+writeableStream.write("Привет мир!");
+writeableStream.write("Продолжение записи \n");
+writeableStream.end("Завершение записи");
+let readableStream = fs.createReadStream("hello.txt", "utf8");
+ 
+readableStream.on("data", function(chunk){ 
+    console.log(chunk);
+});
+```
+
+[^ Вверх](#home)
+# Pipe (Канал) <a name='pipe'></a>
+**Pipe** - это канал, который связывает поток для чтения и поток для записи и позволяет сразу считать из потока чтения в поток записи, т.е. копирование из одного файла в другой.
+
+```javascript
+const fs = require("fs");
+ 
+let readableStream = fs.createReadStream("hello.txt", "utf8");
+let writeableStream = fs.createWriteStream("some2.txt");
+ 
+readableStream.pipe(writeableStream);
+```
 
 
+[^ Вверх](#home)  
+# Сервер <a name='server'></a>
+Для работы с **сервером** и **протоколом http** в Node.js используется модуль **http**.  
 
-<style>
-  .spoiler {
-    display: none;
-  }
+```http.createServer(function(request, response))``` - используется для создания сервера. Возвращает объект **http.Server**. Принимает коллбек, в котором параметр **request** - хранит информацию о запросе, **response** - управляет отправкой ответа.  
+```listen(portNumber)``` - для прослушивания и оброботки входящих подключений. Принимает номер порта, по которому запускается сервер.  
 
-  .source:hover .spoiler {
-    display: block;
-  }
-</style>
+## Request
+Параметр **request** позволяет получить информацию о запросе и представляет объект ```http.IncomingMessage```. Основные свойства объекта:  
+* **headers** - возвращает заголовки ответа.  
+* **method** - тип запроса (GET, POST, PUT, DELETE).  
+* **url** - представляет запрошенный адрес.
+
+## Response
+Параметр **response** управляет отправкой ответа и представляет объект ```http.ServerResponse```. Основные методы: 
+* **statusCode** - устанавливает статусный код ответа.  
+* **statusMessage** - устанавливает сообщение, отправляемое вместе со статусным кодом.  
+* **setHeader(name, value)** - добавляет ответ в один заголовок.  
+* **write** - пишет в поток ответа некоторую информацию.  
+* **writeHead** - добавляет в ответ статусный код и набор заголовков.  
+* **end** - сигнализирует серверу, что заголовки и тело ответа установлены, в итоге ответ отсылается клиенту. Данный метод должен вызываться в каждом запросе.
+
+```javascript
+const http = require("http");
+ 
+http.createServer(function(request, response){
+     
+    response.setHeader("UserId", 12);
+    response.setHeader("Content-Type", "text/html; charset=utf-8;");
+    response.write("<h2>hello world</h2>");
+    response.end();
+}).listen(3000);
+```
+
+## Маршрутизация
+Если необходимо разграничить простейшую обработку пары-тройки маршрутов, то вполне можно использовать для этого свойство **url** объекта **Request**, иначе лучше использовать **Express**.
+
+**Переадресация** предполагает отправку статусного кода **301** (постоянная переадресация) или **302** (временная переадресация) и заголовка Location, который указывает на новый адрес.
+```javascript
+const http = require("http");
+  
+http.createServer(function(request, response){
+     
+    response.setHeader("Content-Type", "text/html; charset=utf-8;");
+     
+    if(request.url === "/"){  // маршрутизация
+        response.statusCode = 302; // временная переадресация
+        // на адрес localhost:3000/newpage
+        response.setHeader("Location", "/newpage");
+    }
+    else if(request.url == "/newpage"){ // маршрутизация 
+        response.write("New address");
+    }
+    else{
+        response.write("Not Found");
+        response.statusCode = 404; // адрес не найден
+    }
+    response.end();
+}).listen(3000);
+```
+
+**Отправка статического файла:**  
+```javascript
+const http = require("http");
+const fs = require("fs");
+  
+http.createServer(function(request, response){
+      
+    console.log(`Запрошенный адрес: ${request.url}`);
+    // получаем путь после слеша
+    const filePath = request.url.substr(1);
+    fs.readFile(filePath, function(error, data){
+              
+        if(error){
+                  
+            response.statusCode = 404;
+            response.end("Resourse not found!");
+        }   
+        else{
+            response.end(data);
+        }
+    });
+}).listen(3000, function(){
+    console.log("Server started at 3000");
+});
+```
+## Шаблоны
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>{header}</h1>
+    <p>{message}</p>
+</body>
+<html>
+```
+```javascript
+const http = require("http");
+const fs = require("fs");
+ 
+http.createServer(function(request, response){
+     
+    fs.readFile("index.html", "utf8", function(error, data){
+                 
+        let message = "Изучаем Node.js"; 
+        let header = "Главная страница";
+        data = data.replace("{header}", header).replace("{message}", message);
+        response.end(data);
+    })
+}).listen(3000);
+```
+
+# Express <a name='express'></a>
