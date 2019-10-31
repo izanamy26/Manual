@@ -387,4 +387,52 @@ http.createServer(function(request, response){
 }).listen(3000);
 ```
 
+[^ Вверх](#home)
 # Express <a name='express'></a>
+```javascript
+// подключение express
+const express = require("express");
+// создаем объект приложения
+const app = express();
+// определяем обработчик для маршрута "/"
+app.get("/", function(request, response){
+     
+    // отправляем ответ
+    response.send("<h2>Привет Express!</h2>");
+});
+// начинаем прослушивать подключения на 3000 порту
+app.listen(3000);
+```
+Когда фреймворк Express получает запрос, этот запрос передается в конвейер обработки. Конвейер состоит из набора компонентов или middleware, которые получают данные запроса и решают, как его обрабатывать. 
+
+```app.use()``` - для встраивания в конвейер обработки запроса на любом этапе любую функцию middleware.  Функция, которая передается в **app.use()**, принимает три параметра: Функция, которая передается в **app.use()**, принимает три параметра:   
+* ```request``` - данные запроса.  
+* ```response``` - объект для управления ответом.  
+* ```next``` -  следующая в конвейере обработки функция.
+
+```javascript
+const express = require("express");
+ 
+const app = express();
+app.use(function(request, response, next){
+     
+    console.log("Middleware 1");
+    next();
+});
+app.use(function(request, response, next){
+     
+    console.log("Middleware 2");
+    response.send("Middleware 2"); //так как происходит отправка, то 'Route /' не выведется
+});
+ 
+app.get("/", function(request, response){
+    console.log("Route /");
+    response.send("Hello");
+});
+app.listen(3000);
+```
+Функции middleware также могут сопоставляться с определенными маршрутами. 
+```javascript
+app.use("/about", function(request, response, next) { });
+```
+
