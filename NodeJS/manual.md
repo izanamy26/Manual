@@ -403,6 +403,9 @@ app.get("/", function(request, response){
 // начинаем прослушивать подключения на 3000 порту
 app.listen(3000);
 ```
+
+## Маршрутизация
+
 Когда фреймворк Express получает запрос, этот запрос передается в конвейер обработки. Конвейер состоит из набора компонентов или middleware, которые получают данные запроса и решают, как его обрабатывать. 
 
 ```app.use()``` - для встраивания в конвейер обработки запроса на любом этапе любую функцию middleware.  Функция, которая передается в **app.use()**, принимает три параметра: Функция, которая передается в **app.use()**, принимает три параметра:   
@@ -436,3 +439,116 @@ app.listen(3000);
 app.use("/about", function(request, response, next) { });
 ```
 
+## Отправка ответа
+```send()``` - отправка объекта. В качестве параметра эта функция может принимать объект Buffer, строку, в том числе с html-кодом, объект javascript или массив.
+```javascript
+const express = require("express");
+const app = express();
+ 
+app.use(function (request, response) {
+    response.send("<h2>Hello</h2>");
+   // response.send({id:6, name: "Tom"});
+   // response.send(["Tom", "Bob", "Sam"]);
+   // response.send(Buffer.from("Hello Express"));
+});
+ 
+app.listen(3000)
+```
+
+```sendFile()``` - отправка файлов. Необходимо передавать абсолютный путь к файлу, например, с помощью ```__dirname``` получить абсолютный путь к текущему проекту и добавить к нему путь к файлу в рамках текущего проекта.
+
+```sendStatus()``` - отправляет пользователю определенный статусный код с некоторым сообщением по умолчанию. 
+```javascript
+const express = require("express");
+const app = express();
+ 
+app.use("/home/foo/bar",function (request, response) {
+  response.status(404).send(`Ресурс не найден`);
+});
+ 
+app.listen(3000);
+```
+
+```express.static()``` - используется для работы со стачискими файлами. Чтобы встроить компонент express.static в процесс обработки запроса, вызывается функция app.use(). Эта функция позволяет добавлять различные компоненты, которые еще называются middleware, в конвейер обработки запроса:
+```javascript
+app.use(express.static(__dirname + "/public"));
+```
+
+**express.static()** в данном случае мы напрямую обращаемся к статическим файлам, а функция **sendFile** фактически берет содержимое из файла и отсылает его пользователю.
+
+В приложении определяются маршруты, а также обработчики этих маршрутов. Если запрос соответствует определенному маршруту, то вызывается для обработки запроса соответствующий обработчик. При определении функции для обработки того или иного машрута следует учитывать, что более общие маршруты должны идти после более частных. Для обработки данных по определенному маршруту можно использовать ряд функций, в частности: use, get, post, put, delete.
+
+Используемые шаблоны адресов могут содержать регулярные выражения или специальные символы подстановок. В частности, мы можем использовать такие символы, как **?, +, * и ()**.
+
+```javascript
+app.get(/.*(\.)html$/, function (request, response) { // все .html файлы
+    response.send(request.url)
+});
+```
+## Переадрисация
+```redirect()``` - используется для переадресации. В качестве параметра **path** передается путь, на который будет перенаправляться пользователь. Дополнительный параметр **status** задает статусный код переадресации.
+```javascript
+redirect([status,] path);
+```
+Переадрисацию можно производить как по относительным, так и по абсолютным путям.
+```javascript
+const express = require("express");
+const app = express();
+ 
+app.use("/home",function (request, response) {
+  response.redirect("about")
+});
+app.use("/about", function (request, response) {
+  response.send("<h1>About</h1>");
+});
+ 
+app.listen(3000);
+```
+
+Если необходимо выполнить переадресацию не относительно текущего ресурса ("about"), а относительно корневого каталога приложения, то в начале адреса ставится слеш ("/about"). На уровень выше ("."), на два ("..").
+
+По умолчанию при редиректе передается статусный код **302**, который указывает, что ресурс временно доступен по новому адресу. Но можно указать статусный код **301**, чтобы сделать переадресацию постоянной.
+
+## Передача параметров
+В **express** можно получить параметра строки запроса через свойство **query** объекта **request**, который передается в функцию обработки запроса.
+```javascript
+const express = require("express");
+// http://localhost:3000/about?id=3&name=Tome  
+const app = express();
+app.get("/", function(request, response) {
+    response.send("<h1>Главная страница</h1>");
+});
+
+app.use("/about", function(request, response) {      
+    let id = request.query.id;
+    let userName = request.query.name;
+    response.send("<h1>Информация</h1><p>id=" + id +"</p><p>name=" + userName + "</p>");
+});
+ 
+app.listen(3000);
+```
+
+## POST-запросы
+Прежде всего для получения отправленных данных необходимо создать парсер.
+```urlencoded()``` - создание парсера. Принимает объект с параметрами парсинга. Значение **extended: false** указывает, что объект - результат парсинга будет представлять набор пар ключ-значение, а каждое значение может быть представлено в виде строки или массива.
+```javascript
+const urlencodedParser = bodyParser.urlencoded({extended: false});
+```
+```javascript
+app.post("/register", urlencodedParser, function (request, response) {
+    if(!request.body) return response.sendStatus(400);
+    console.log(request.body); // получение данных
+    response.send(`${request.body.userName} - ${request.body.userAge}`);
+});
+```
+Название параметра должно включать символы из диапазона [A-Za-z0-9_]. В определении маршрута параметры предваряются знаком двоеточия. Через коллекцию ```request.params``` можно получить все параметры.
+```javascript
+const express = require("express");
+const app = express();
+ 
+app.get("/products/:productId", function (request, response) { // products/apple
+  response.send("productId: " + request.params["productId"]);   // apple
+});
+ 
+app.listen(3000);
+```
