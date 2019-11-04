@@ -38,6 +38,11 @@ Vue.component('test', {
         prop: 't',
         event: 'change'
     },
+    watch: {
+        'test.d': function() {
+            this.giveData();
+        }
+    },
     methods: {
         giveData: function(e) {
             this.t = Object.assign({}, this.test);
