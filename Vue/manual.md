@@ -20,6 +20,10 @@
 * [Примеси](#mixin)
 * [Пользовательские директивы](#user-directive)
 * [Render-функции и JSX](#render-jsx)
+* [Функциональный компонент](#functional)
+* [Плагины](#plugins)
+* [Фильтры](#filters)
+
 
 ***
 VueJS представляет CLI для установки vue и начала работы с активацией сервера. 
@@ -1298,3 +1302,242 @@ new Vue({
 [^ Вверх](#home)
 # Render-функции и JSX <a name='render-jsx'></a>
 **render-функции** — это более низкоуровневая альтернатива шаблонам.
+
+Аргументом render-функции является альтернатива строковым шаблонам - функция **CreateElement**.
+
+```javascript
+// @returns {VNode}
+createElement(
+  // {String | Object | Function}
+  // Название тега HTML, опции компонента или асинхронная функция,
+  // возвращающая один из двух них. Обязательный параметр.
+  'div',
+
+  // {Object}
+  // Объект данных, содержащий атрибуты,
+  // который указывался в шаблоне. Опциональный параметр.
+  {
+        {
+  // То же API, что и у `v-bind:class`, принимающий
+  // строку, объект, массив строк или массив объектов
+  class: {
+    foo: true,
+    bar: false
+  },
+  // То же API, что и у `v-bind:style`, принимающий
+  // строку, объект, массив строк или массив объектов
+  style: {
+    color: 'red',
+    fontSize: '14px'
+  },
+  // Обычные атрибуты HTML
+  attrs: {
+    id: 'foo'
+  },
+  // Входные параметры компонентов
+  props: {
+    myProp: 'bar'
+  },
+  // Свойства DOM
+  domProps: {
+    innerHTML: 'baz'
+  },
+  // Обработчики событий располагаются под ключом `on`,
+  // однако модификаторы, вроде как `v-on:keyup.enter`, не
+  // поддерживаются. Проверять keyCode придётся вручную.
+  on: {
+    click: this.clickHandler
+  },
+  // Только для компонентов. Позволяет слушать нативные события,
+  // а не генерируемые в компоненте через `vm.$emit`.
+  nativeOn: {
+    click: this.nativeClickHandler
+  },
+  // Пользовательские директивы. Обратите внимание, что `oldValue`
+  // не может быть указано, так как Vue сам его отслеживает
+  directives: [
+    {
+      name: 'my-custom-directive',
+      value: '2',
+      expression: '1 + 1',
+      arg: 'foo',
+      modifiers: {
+        bar: true
+      }
+    }
+  ],
+  // Слоты с ограниченной областью видимости в формате
+  // { name: props => VNode | Array<VNode> }
+  scopedSlots: {
+    default: props => createElement('span', props.text)
+  },
+  // Имя слота, если этот компонент
+  // является потомком другого компонента
+  slot: 'name-of-slot',
+  // Прочие специальные свойства верхнего уровня
+  key: 'myKey',
+  ref: 'myRef',
+  // Если указываете одно имя в ref к нескольким элементам
+  // в render-функции — это сделает `$refs.myRef` массивом
+  refInFor: true
+}
+
+  },
+
+  // {String | Array}
+  // Дочерние виртуальные узлы (VNode), создаваемые с помощью `createElement()`
+  // или просто строки для получения 'текстовых VNode'. Опциональный параметр.
+  [
+    'Какой-то текст прежде всех остальных элементов.',
+    createElement('h1', 'Заголовок'),
+    createElement(MyComponent, {
+      props: {
+        someProp: 'foobar'
+      }
+    })
+  ]
+)
+```
+
+Все виртуальные узлы в компоненте должны быть уникальными. Т.е., напрмиер, дочерние узлы указывать не в массиве:
+```javascript
+createElement('div', [
+    // дублирующиеся виртуальные узлы!
+    myParagraphVNode, myParagraphVNode
+  ]);
+
+// альткрнатива
+  Array.apply(null, { length: 20 }).map(function () {
+      return createElement('p', 'Привет')
+    });
+```
+
+### v-model
+```javascript
+props: ['value'],
+render: function (createElement) {
+  var self = this
+  return createElement('input', {
+    domProps: {
+      value: self.value
+    },
+    on: {
+      input: function (event) {
+        self.$emit('input', event.target.value)
+      }
+    }
+  })
+}
+```
+
+Для модификаторов событий **.passive**, **.capture** и **.once**, Vue предоставляет префиксы, которые могут быть использованы вместе с **on**:
+**.passive:**	&  
+**.capture:**	!  
+**.once:**	~  
+**.capture.once или .once.capture:** ~!    
+Для модификаторов клавиш префиксов нет.
+
+
+Чтобы получить статическое содержимое лотов, используется ```this.$slots```.  
+Чтобы получить доступ к слотам со своей областью видимости как к функциям, возвращающим VNode, используя ```this.$scopedSlots```.
+Чтобы передать слот со своей областью видимости:
+```javascript
+    createElement('child', {
+      // передаём `scopedSlots` в объект data
+      // в виде { name: props => VNode | Array<VNode> }
+      scopedSlots: {
+        default: function (props) {
+          return createElement('span', props.text)
+        }
+      }
+    });
+```
+
+[^ Вверх](#home)  
+# Функциональный компонент <a name='functional'></a>
+Это компонент, у которого отсутствует состояние (нет реактивных данных) и экземпляр (нет переменной контекста this).
+
+```javascript
+Vue.component('my-component', {
+  functional: true,
+  // входные параметры опциональны
+  props: {
+    // ...
+  },
+  // чтобы компенсировать отсутствие экземпляра
+  // передаётся контекст вторым аргументом
+  render: function (createElement, context) {
+    // ...
+  }
+})
+```
+
+Всё необходимое компоненту передаётся через context — объект, содержащий следующие поля:
+
+**props** - Объект со всеми переданными входными параметрами.  
+**children** - Массив дочерних виртуальных узлов.  
+**slots** - Функция, возвращающая объект со слотами.  
+**scopedSlots** - Объект, содержащий все переданные слоты с ограниченной областью видимости. Также предоставляет доступ к обычным слотам в качестве функций.  
+**data** - Объект данных целиком, переданный объекту вторым аргументом createElement.  
+**parent** - Ссылка на родительский компонент.  
+**listeners** - Объект, содержащий все зарегистрированные в родителе прослушиватели событий. Это просто псевдоним для data.on.  
+**injections** - Если используется опция inject, будет содержать все разрешённые инъекции.
+
+[^ Вверх](#home)  
+# Плагины <a name='plugins'></a>
+Для использования плагина необходимо вызвать глобальный метод **Vue.use()**. Его нужно вызывать перед new Vue():
+```javascript
+Vue.use(MyPlugin, { someOption: true })
+```
+Создание плагина:
+```javascript
+MyPlugin.install = function (Vue, options) {
+  // 1. добавление глобального метода или свойства
+  Vue.myGlobalMethod = function () {
+    // некоторая логика ...
+  }
+
+  // 2. добавление глобального объекта
+  Vue.directive('my-directive', {
+    bind (el, binding, vnode, oldVnode) {
+      // некоторая логика ...
+    }
+    ...
+  })
+
+  // 3. добавление опций компонентов
+  Vue.mixin({
+    created: function () {
+      // некоторая логика ...
+    }
+    ...
+  })
+
+  // 4. добавление метода экземпляра
+  Vue.prototype.$myMethod = function (methodOptions) {
+    // некоторая логика ...
+  }
+}
+```
+
+[^ Вверх](#home) 
+# Фильтры <a name='filters'></a>
+Применяются в mustache-интерполяциях и в выражениях v-bind. Фильтры добавляются в конце выражения JavaScript и отделяются вертикальной чертой:
+```javascript
+filters: {  // {{ message | capitalize }}
+  capitalize: function (value) {
+   return value;
+  }
+}
+// либо
+Vue.filter('capitalize', function (value) {
+  return value;
+});
+
+// цепочки фильтров
+{{ message | filterA | filterB }}
+
+// передача аргументов
+{{ message | filterA('arg1', arg2) }}
+
+```
