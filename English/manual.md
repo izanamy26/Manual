@@ -1,11 +1,14 @@
  * [Времена](#times)   
     
     * [Present Perfect Simple](#present-perfect-simple)
-    * [Present Perfect Continious](#present-perfect-continious)
+    * [Present Perfect Continuous](#present-perfect-continious)
     * [Past Simple](#past-simple)
     * [Past Perfect Simple](#past-perfect-simple)
     * [Future Simple](#future-simple)
     * [Future Continuous](#future-continuous)
+    * [Future Perfect](#future-perfect)
+    * [Future Perfect Continuous](#future-perfect-continuous)
+    * [Future Forms](#future-forms)    
 
  * [Артикли a, an  и the](#a-an-the)
  * [Косвенная речь](#reported-speech) 
@@ -19,6 +22,8 @@
  * [Прилагательные](#adjectives)
  * [Придаточные предложения](#result-clauses)
  * [Восклицания](#exclamations)
+ * [Фразовые глаголы](#phrasal-verbs)
+ * [Пассив](#passive)
 
 
 
@@ -285,6 +290,20 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
  Когда имеется в виду способ передвижения, используется предлог **BY**:
  *be car/bus/train/taxi ... **HO** on foot*
 
+ ask **about** sth  
+ ask sb **for** sth  
+ engaged **to** sb  
+ **but** engaged **in** sth  
+ married **to** sb
+ brillant/good/bad **at** sth  
+ **but** weak **in**  
+ borrow sth **from** sb  
+ explain sth **to** sb  
+ interested **in** sth  
+ invite sb **to** a place  
+ laugh **at** sb/sth  
+ listen **to** sb/sth  
+ look **at** sb/sth
 
 
 # Времена <a name='times'></a>
@@ -412,6 +431,77 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 *This time next week, I'll be skiing in Austria.*  
 *I'll be seeing them at meeting tomorrov.*   
 *Will you be going out later?*
+
+
+## Future Perfect <a name='future-perfect'></a>
+Время используется:  
+* для действия, которое закончится к определенному времени в будущем.
+
+**by, by the time, before, until, by then, etc.**
+
+**(+)** I/you/she/he/it/we/they **will have** **V** (3 form)  
+**(-)** I/you/she/he/it/we/they **will not (won't) have** **V** (3 form)    
+**(?)** **Will** I/you/she/he/it/we/they **have V** (3 form)?
+
+*They will have finished their meeting by four o'clock this afternoon.*
+
+
+## Future Perfect Continuous <a name='future-perfect-continious'></a>
+Время используется:
+* Для подчеркивания длитльности действия, происходящего в будущем.
+
+**by ... for**  
+
+**(+)** I/you/she/he/it/we/they **will have been** **V** (-ing)  
+**(-)** I/you/she/he/it/we/they **will not (won't) have been** **V** (-ing)    
+**(?)** **Will** I/you/she/he/it/we/they **have been V** (-ing)?
+
+*By the time Rick retires, she will have been working for the same company for thirty years.*  
+
+**! Note: ** После выражений **be the time, until, before** используется **Preset Simple**, будущие времена должны идити перед или до настоящего времени:  
+*I will have tidied up by the time you get back.*  
+*By the time she finishes work, we will have been waiting for more than an hour.*
+
+## Future forms <a name='future-forms'></a>
+### Future simple
+* Предположение (think, believe, be afraid, probably, etc.)  
+*I believe life will change in the 21st century.*  
+* Спонтанное решение или предложение.  
+*It's late. I'll take a taxi home. I'll lend you my car if you want.*  
+* Ситуации, которые происходят в будущем и невозможно контролировать.  
+*Winter will set in early this year.*  
+* Обещания, надежды, беспокойства, предупреждение и др.  
+*Stop talking or I'll send you out of the class.* (предупреждение)  
+### Be going to
+* Планы, амбиции.  
+*I'm going to buy a sports car.*  
+* Предположение, что произойдет какое очевидное событие в ближайшем будущем.  
+*Someone's going to fall over the box if you don't move it.*  
+
+### Present continuous
+* Фиксированная договоренность, действие в ближайшем будущем.  
+*He's flying to Turkey next month. He has already booked his flight.*  
+
+### Present simple
+* По расписанию.  
+*The ferry leaves at eight o'clock tomorrow morning.*  
+
+### Future continuous
+* Длительное действие, которое начнется в будущем.  
+*This time next week he'll be flying to Morocco.*  
+* Действие, которое случится в будущем по договоренности или в результате ежедневного действия.  
+*I'll be seeing Jim at work later on today.*  
+* Вежливо спросить о планах другого человека, что бы попросить его сделать что-то.  
+*Will you be going to the dentist this afternoon? Yes? why? Can you make an appointment for me to see him?*
+
+### Future perfect
+* Действие, которое закончится к началу какого-то времени в будущем.
+ *We will have returned home by Sunday afternoon.*
+
+ ### Future perfect continuous
+ * Подчеркнуть длительность времени в будущем.  
+ *By the end of this week, she will have been working here for six years.*
+
 
 # Согласие/Несогласие <a name='agreeing-disagreeing'></a>
 
@@ -605,3 +695,13 @@ far - further/farther - the furthest/the farthest
 
 **Negative question**  
 *Isn't it great to be here!*
+
+# Фразовые глаголы <a name='phrasal-verbs'></a>
+**carry on (with)** - продолжать  
+**carry out** - заканчивать какое-то дело  
+**hold back** - сдерживать эмоции  
+**hold on** - ждать  
+**hold up** - отсрочить, отложить, ограбить
+
+
+# Пассив <a name='passive'></a>
