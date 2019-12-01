@@ -705,3 +705,15 @@ far - further/farther - the furthest/the farthest
 
 
 # Пассив <a name='passive'></a>
+**Present simple** - is explored  
+**Present continuous** - is being explored  
+**Present perfect** - has been explored
+***
+**Past simple** - was explored  
+**Past continuous** - was being explored  
+**Past perfect** - had been explored  
+***
+**Future simple** - will be explored  
+**Future perfect** - will have been explored  
+***
+**modal** - must be explored 
