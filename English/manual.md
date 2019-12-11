@@ -18,6 +18,7 @@
  * [Относительные местоимения](#relative-pronouns)
  * [Прилагательные](#adjectives)
  * [Придаточные предложения](#result-clauses)
+ * [# Временные союзы](#time-conjunctions)
  * [Восклицания](#exclamations)
 
 
@@ -579,6 +580,29 @@ far - further/farther - the furthest/the farthest
 
 **for** + -ing form  
 *We use an axe **for chopping** wood.* (Мы используем топор чтобы рубить дрова.)
+
+## Время
+Связываются временными союзами:  
+**when-as-no sooner... than-while-before-the moment that-since-after-hardly... when-till/until-by the time-whenever-as long as-as soon as, etc.**  
+
+* Если в сложноподчиненном предложении, сначала идет придаточная часть, а затем главное предложение, то придаточное предложение отдедляется запятыми.  
+*After I have cleaned my room (time clause), I will watch TV (main clause).*  
+*I will watch TV (main clause) after I have cleaned my room (time clause).*  
+
+* Никогда не используется будущее время после временных союзов, используется Present Simple или Present Perfect, когда говорится  будущем.  
+*Sharon will give us the money after she gets paid.*  
+
+**Main clauses**                             **Time clause**
+Present/Future/повелительное                 Present Simple/Present Perfect  
+*He watches the news before he goes to bad.*  
+*I'll tidy up after we finish/have finished cooking.*  
+*Lock the door when you leave.*  
+Past Simple/Past Perfect                     Past Simple/Past Perfect  
+*She had a nap after she had tidied up.*  
+*Jim had fallen asleep before Ann got home.*
+
+
+# Временные союзы <a name='time-conjunctions'></a>
 
 
 # Восклицания <a name='exclamations'></a>
