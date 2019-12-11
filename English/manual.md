@@ -21,6 +21,7 @@
  * [Относительные местоимения](#relative-pronouns)
  * [Прилагательные](#adjectives)
  * [Придаточные предложения](#result-clauses)
+ * [# Временные союзы](#time-conjunctions)
  * [Восклицания](#exclamations)
  * [Фразовые глаголы](#phrasal-verbs)
  * [Пассив](#passive)
@@ -669,6 +670,40 @@ far - further/farther - the furthest/the farthest
 
 **for** + -ing form  
 *We use an axe **for chopping** wood.* (Мы используем топор чтобы рубить дрова.)
+
+## Время
+Связываются временными союзами:  
+**when-as-no sooner... than-while-before-the moment that-since-after-hardly... when-till/until-by the time-whenever-as long as-as soon as, etc.**  
+
+* Если в сложноподчиненном предложении, сначала идет придаточная часть, а затем главное предложение, то придаточное предложение отдедляется запятыми.  
+*After I have cleaned my room (time clause), I will watch TV (main clause).*  
+*I will watch TV (main clause) after I have cleaned my room (time clause).*  
+
+* Никогда не используется будущее время после временных союзов, используется Present Simple или Present Perfect, когда говорится  будущем.  
+*Sharon will give us the money after she gets paid.*  
+
+**Main clauses**                             **Time clause**
+Present/Future/повелительное                 Present Simple/Present Perfect  
+*He watches the news before he goes to bad.*  
+*I'll tidy up after we finish/have finished cooking.*  
+*Lock the door when you leave.*  
+Past Simple/Past Perfect                     Past Simple/Past Perfect  
+*She had a nap after she had tidied up.*  
+*Jim had fallen asleep before Ann got home.*
+
+
+# Временные союзы <a name='time-conjunctions'></a>
+
+**before** - ранее прошедшего времени (*She had graduated two years before*).  
+**ago** - ранее настоящего времени (*Peter graduated four tears ago*)  
+**by the time + clause** - ранее, не позже момента, когда что-то произойдет (*I will hhave arranged everything be the time you come back*)  
+**untill/till + clause/time adverb** - до того времени, когда (*He will wait for you untill/till you are ready*)  
+**by** - не позже чем (*I hav eto be back by Tuesday evening*)  
+**while/as + clause** - во временной период (*The earthquake occurred while/as they were sleeping*)  
+**during + noun** - во временной период (*The earthquake occurred during the night*)  
+**no sooner ... than = hardly ... when** - используются структуры, чтобы показать, что действие происходит незамедлительно после другого (*I had hardly opened the door when the cat got out. Sheila had no sooner finished reading the letter than she burst into tears.*)  
+**as sooner as = the moment (that)** - как только, в этот момент (*Call me as sooner as/the moment you arrive*)  
+**when + present tense**, **when (question) + will** - (*When I see Tom, I'll let him know. I don't know when he will be back.*)
 
 
 # Восклицания <a name='exclamations'></a>
