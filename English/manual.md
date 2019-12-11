@@ -604,6 +604,17 @@ Past Simple/Past Perfect                     Past Simple/Past Perfect
 
 # Временные союзы <a name='time-conjunctions'></a>
 
+**before** - ранее прошедшего времени (*She had graduated two years before*).  
+**ago** - ранее настоящего времени (*Peter graduated four tears ago*)  
+**by the time + clause** - ранее, не позже момента, когда что-то произойдет (*I will hhave arranged everything be the time you come back*)  
+**untill/till + clause/time adverb** - до того времени, когда (*He will wait for you untill/till you are ready*)  
+**by** - не позже чем (*I hav eto be back by Tuesday evening*)  
+**while/as + clause** - во временной период (*The earthquake occurred while/as they were sleeping*)  
+**during + noun** - во временной период (*The earthquake occurred during the night*)  
+**no sooner ... than = hardly ... when** - используются структуры, чтобы показать, что действие происходит незамедлительно после другого (*I had hardly opened the door when the cat got out. Sheila had no sooner finished reading the letter than she burst into tears.*)  
+**as sooner as = the moment (that)** - как только, в этот момент (*Call me as sooner as/the moment you arrive*)  
+**when + present tense**, **when (question) + will** - (*When I see Tom, I'll let him know. I don't know when he will be back.*)
+
 
 # Восклицания <a name='exclamations'></a>
 
