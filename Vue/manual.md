@@ -23,6 +23,7 @@
 * [Функциональный компонент](#functional)
 * [Плагины](#plugins)
 * [Фильтры](#filters)
+* [Vuex](#vuex)
 
 
 ***
@@ -40,7 +41,6 @@ VueJS представляет CLI для установки vue и начала
 
 ***
 [^ Вверх](#home)  
-
 
 
 # Компоненты <a name="components"></a>
@@ -1541,3 +1541,56 @@ Vue.filter('capitalize', function (value) {
 {{ message | filterA('arg1', arg2) }}
 
 ```
+
+
+[^ Вверх](#home) 
+# Vuex <a name='vuex'></a>
+Хранилище данных, которые могут изменяться только предсказуемым образом.  
+
+```javascript
+import Vuex from 'vuex';
+
+const store = new Vuex.Store({
+  state: {},    // корневой объект состояния хранилища
+  
+  mutations: { 
+    someMutation (state, preload) { ... }, // Аргументы:   состояние и нагрзука (если есть)
+    ...
+  },
+
+  actions: {
+    someAction (contex, preload) { ... },
+    ...
+  },
+
+  getters: {
+    someGetter (state, getters) { ... }, // В модуле аргументы (state, getters, rootState, rootGetters) - логальное состояние и геттеры и глобальное состояние и геттеры
+    ...
+  },
+
+  modules: { // содержит подмодули, работают с локальными состояниями
+    key: {
+      state,
+      namespaced,
+      mutations,
+      actions,
+      getters,
+      modules
+    },
+    ...
+  },
+
+  plugins: [], // Плагины получают хранилище в качестве единственного аргумента, 
+               // и могут как отслеживать мутации (для сохранения исходящих данных, логирования или отладки)
+               // или инициировать их (для обработки входящих данных, например, websockets или observables)
+
+  strict: true/false, // любые изменения состояния, происходящие вне обработчиков мутаций, будут выбрасывать ошибки
+
+  devtools: true/false, // Интеграция в devtools конкретного экземпляра Vuex.             
+
+});
+```
+
+Далее доступ к состоянию можно получить через ```store.state```;
+
+
