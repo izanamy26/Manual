@@ -27,7 +27,7 @@
  * [Пассив](#passive)
 
 
-
+[^ Вверх](#home)  
 ## Артикли a, an  и the <a name='a-an-the'></a>
 
 ### A/An
@@ -98,7 +98,7 @@
 **Но:** *His mother went to the prison to visit him last week.*
 
 
-
+[^ Вверх](#home)  
 ## Косвенная речь <a name='reported-speeck'></a>
 Косвенная речь передает содержание чьего-либо высказывания, но не точные слова.
 
@@ -163,7 +163,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 
 
 
-
+[^ Вверх](#home)  
 ## Условные предложения (Conditions) <a name='conditions'></a>
 
 0) Постоянная правда или законы природы.
@@ -226,6 +226,8 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 **to** - не помнить.   
 **-ing** - всегда помнить.
 
+
+[^ Вверх](#home)  
 ## Предлоги <a name='#preposition'></a>
  ### Предлоги времени
  **AT**  
@@ -249,6 +251,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
  **Предлоги времени не употребляются с**
  * Со словами *today, tomorrow, tonight, yesterday*
  * Перед словами *this, last, next, every, all, some, each, one, any*
+
 
  ### Предлоги места
  **AT**
@@ -308,7 +311,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 
 
 # Времена <a name='times'></a>
-
+[^ Вверх](#home)  
 ## Present Perfect Simple <a name='present-perfect-simple'></a>
 Время используется:
 * для действия, которое произошло в неустановленное время в прошлом. Время в данном случае не имеет значение, важно само действие.
@@ -328,7 +331,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 **JUST/ALERADY** (в утвердительных предложениях): She's already booked a table for two. I've just bought a new dress.  
 **YET** (в вопросах и отрицательных выражениях): Has Jim fixed the car yet? They haven't cooked dinner yet.
 
-
+[^ Вверх](#home)  
 ## Present Perfect Continious <a name='present-perfect-continious'></a>
 Время используется:
 * для действия, которое началось в прошлом и продолжается до настоящего.
@@ -346,7 +349,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 Пример:  
 *They are tired. They have been working for nine hours*
 
-
+[^ Вверх](#home)  
 ## Past Simple <a name='past-simple'></a>
 Время используется:
 * для действия, которое произошло или закончилось в прошлом в определенное время.
@@ -385,7 +388,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 Пример:  
 *They had booked a room before they went on holiday.*
 
-
+[^ Вверх](#home)  
 ## Future Simple <a name='future-simple'></a>
 Время используется:
 * для действия, которое верим, что должно произойти или предполагаем.
@@ -419,6 +422,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 **Present Simple or Present Perfect Simple** - используется после слов или выражений: *while, before, after, until/till, as, unless, when, whenever, if, supppose/supposing, once, as soon as, as long as, be the time, in, case, on condition that, etc.*
 
 
+[^ Вверх](#home)  
 ## Future Continuous <a name='future-continuous'></a>
 Время используется:  
 * для действия, которое будет происходить длительное время в определенное время в будущем.  
@@ -433,7 +437,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 *I'll be seeing them at meeting tomorrov.*   
 *Will you be going out later?*
 
-
+[^ Вверх](#home)  
 ## Future Perfect <a name='future-perfect'></a>
 Время используется:  
 * для действия, которое закончится к определенному времени в будущем.
@@ -463,6 +467,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 *I will have tidied up by the time you get back.*  
 *By the time she finishes work, we will have been waiting for more than an hour.*
 
+[^ Вверх](#home)  
 ## Future forms <a name='future-forms'></a>
 ### Future simple
 * Предположение (think, believe, be afraid, probably, etc.)  
@@ -504,6 +509,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
  *By the end of this week, she will have been working here for six years.*
 
 
+[^ Вверх](#home)  
 # Согласие/Несогласие <a name='agreeing-disagreeing'></a>
 
 * Cогласие c положительным утверждением:  
@@ -554,6 +560,7 @@ tell the truth, tell a lie, tell sb the time, tell sb one's name, tell a story, 
 4) **color:** dark/light blue, yellow, pink, etc.
 5) **material:** cotton, leather, silk, plastic, woollen, etc.
 
+[^ Вверх](#home)  
 ## Степени сравнения
 *adjective* - *comparative* - *superlative*  forms  
 cheap - cheap**er** - **the** cheap**est**  
@@ -585,6 +592,7 @@ far - further/farther - the furthest/the farthest
 
 **Make:** an appointment, an arrangement, the beds, a cake, certain, changes, coffee, a dial with sb, a decision, a discovery, an effort, an excuse, a fortune, an impression, improvements, a joke, a mess, a mistake, money, a noise, an offer, peace, preparations, progress, a success of sth, sure, a translation, truble, war, etc.
 
+[^ Вверх](#home)  
 # Придаточные предложения <a name='result-clauses'></a>
 
 ## Результат
@@ -731,6 +739,7 @@ Past Simple/Past Perfect                     Past Simple/Past Perfect
 **Negative question**  
 *Isn't it great to be here!*
 
+[^ Вверх](#home)  
 # Фразовые глаголы <a name='phrasal-verbs'></a>
 **carry on (with)** - продолжать  
 **carry out** - заканчивать какое-то дело  
