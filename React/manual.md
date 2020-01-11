@@ -1,12 +1,15 @@
 # REACT 
 
-1. [JSX](#jsx)
-2. [Метод render](#render)
-3. [Функциональные компоненты](#functional-components)
-4. [Компоненты, основанные на классах](#class-components)
-5. [Состояние компонентов](#component-state)
-6. [Обработка событий](#event)
-7. [Методы жизненного цикла](#live-loop-component)
+* [JSX](#jsx)
+* [Метод render](#render)
+* [Функциональные компоненты](#functional-components)
+* [Компоненты, основанные на классах](#class-components)
+* [Состояние компонентов](#component-state)
+* [Обработка событий](#event)
+* [Методы жизненного цикла](#live-loop-component)
+* [Маршрутизация](#router)
+* [Redux](#redux)
+
 
 * <a src="https://ru.reactjs.org/docs/getting-started.html">Документация React</a>
 * [Полезное](#sweet)
@@ -333,6 +336,93 @@ getSnapshotBeforeUpdate() {
 
 
 # Обработка событий <a name='event'></a>
+
+
+
+
+
+
+
+
+
+# Маршрутизция <a name='router'></a>
+<a href='https://reacttraining.com/react-router/web/guides/quick-start'>Документация</a>  
+
+```<Link>``` - Навигация по клику (компонент);  
+```<Redirect>``` - Перенаправление (компонент);
+```Route``` - Маршрутизация (компонент);  
+```history``` - История (свойство).
+
+**HashRouter** - используется для статических сайтов.  
+**BrowserRouter** - для динамических.
+
+Компонент **Router** ожидает только один элемент в качестве дочернего. Компонент принимает *prop* - **path**, который описывает необходимый маршрут, он сопоставляется с ```location.pathname```. есди положительно, то компоонент рендерится.
+
+npm пакет **path-to-regexp** компилирует prop **path** в регулярное выражение и сопоставляет его с ```location.pathname```.  
+
+Когда пути сопоставляются создается объект **match** который содержит свойства:  
+**url** — сопоставляемая часть текущего ```location.pathname```;   
+**path** — путь в компоненте ```Route```;  
+**isExact** — path в ```Route === location.pathname```;  
+**params** — объект содержит значения из path, которые возвращает модуль **path-to-regexp**.
+
+```<Switch/>``` - компонент группирования Route'ов, итеративно проходит по дочерним компонентам и рендерит только первый, который подходит под ```location.pathname```.
+
+У **Rоuter** есть 3 prop'са, которые указываю, что рендерить при совпадении пути:  
+**component** — React компонент, который будет рендериться при совпадении пути.  
+**render** — функция которая должна вернуть элемент React. ```render``` довольно похож на component, но используется для inline рендеринга.  
+**children** — в отличие от предыдущих двух props children будет всегда отображаться, независимо от того сопоставляется ли path или нет.
+
+Элементу отрендеренному **Route** будет передано несколько *props*. **match** — объект сопоставления path с ```location.pathname```, объект **location** и **history** - объект, созданный самим роутом.
+
+**Route** для главной страницы содержит prop **exact**, благодаря которому пути сравниваются строго.
+
+```javascript
+import { Switch, Route } from 'react-router-dom'
+const Main = () => (
+  <main>
+    <Switch>
+      <Route exact path='/' component={Home}/>
+      <Route path='/product' component={Pproduct}/>
+      <Route path='/schedule' component={Schedule}/>
+    </Switch>
+  </main>
+);
+```
+
+```:number``` часть строки в ```/product/:number``` означает, что часть **path** после ```/product/``` будет получена в виде переменной и сохранится в ```match.params.number```. 
+
+Компонент ```<Link />``` меняет адрес URL и рендерит необходимый элемент. Т.е. обновляет контент без перезагрузки страницы.
+
+```<Link/>``` использует *prop* **to** для описания URL куда следует перейти. *Prop* **to** может быть строкой или **location** объектом, который состоит из pathname, search, hash, state свойств. Если это строка то она конвертируется в **location** объект.
+
+
+
+
+# Redux <a name='redux'></a>
+```
+npm install --save redux
+npm install --save react-redux
+npm install --save-dev redux-devtools
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
