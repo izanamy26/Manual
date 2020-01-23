@@ -1586,11 +1586,17 @@ const store = new Vuex.Store({
 
   strict: true/false, // любые изменения состояния, происходящие вне обработчиков мутаций, будут выбрасывать ошибки
 
-  devtools: true/false, // Интеграция в devtools конкретного экземпляра Vuex.             
+  devtools: true/false, // Интеграция в devtools конкретного экземпляра Vuex             
 
 });
 ```
 
-Далее доступ к состоянию можно получить через ```store.state```;
+Доступ можно получить через ```store.state, store.mutations``` и т.д.
+
+**commit(type: string [, payload: any, options: Object]) или (mutation: Object[, options: Object])** - запускает мутицию. ```root: true``` в опциях запускает корневые мутации.  
+**dispatch(type: string [, payload: any, options: Object]) или (action: Object [, options: Object])** - запускает действия, возвращает промис. ```root: true``` в опциях запускает корневые действия.  
+**replaceState(state: Object)** - замена корневого состояния хранилища новым.  
+**watch(fn: Function, callback: Function [, options: Object]): Function** - отслеживает возвращаемое значение fn, и вызывает коллбэк в случае изменений. Первым аргументом fn будет состояние хранилища, вторым — геттеры.  
+**subscribe(handler: Function): Function** - обработчик handler вызывается после каждой мутации и получает в качестве параметров дескриптор мутации и состояние после мутации. 
 
 

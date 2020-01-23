@@ -11,6 +11,7 @@
     * [Future Forms](#future-forms)    
 
  * [Артикли a, an  и the](#a-an-the)
+ * [Вопросы](#questions)
  * [Косвенная речь](#reported-speech) 
  * [Условные предложения (Conditions)](#conditions)  
  * [-ing форма глагола](#ing)  
@@ -96,6 +97,26 @@
 7. Со словами **bed**, **school**, **church**, **hospital**, **prison**, когда они используются по причине их существования.  
 *John was sent to prison.*   
 **Но:** *His mother went to the prison to visit him last week.*
+
+[^ Вверх](#home)  
+# Вопросы <a name='questions'></a>
+**People:** Who, Whose, Which(one of)  
+**Jobs, things, animals, actions:** What, Which(one of)  
+**Place:** Where   
+**Time:** When, How long, What time, How often  
+**Quantity:** How much, How many  
+**Manner:** How  
+**Reason:** Why
+
+Вопрос к объекту:
+**who, which, what** являются субъектами в утвердительном предложении.  
+*Mary(subject) helped George(object).*  
+*Who did Mary help?*
+
+Вопрос к субъекту:  
+Без вспомогательных глаголов.  
+*Chris(subject) helped Mary(object).*  
+*Who helped Mary?*
 
 
 [^ Вверх](#home)  
