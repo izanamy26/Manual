@@ -1,10 +1,13 @@
  # Webpack
+<a name='top'></a>
 
-1. [Webpack и Babel для настройки React приложения](#webpack-babel-react)
+* [Webpack и Babel для настройки React приложения](#webpack-babel-react)
 
-**Webpack** берёт всё, от чего зависит проект, и преобразует это в статические ресурсы, которые могут быть переданы клиенту. Упаковка приложений — это очень важно, так как большинство браузеров ограничивает возможности по одновременной загрузке ресурсов. Кроме того, это позволяет экономить трафик, отправляя клиенту лишь то, что ему нужно. В частности, **Webpack** использует внутренний кэш, благодаря чему модули загружаются на клиент лишь один раз, что, в итоге, приводит к ускорению загрузки сайтов.
+**Webpack** берёт всё, от чего зависит проект, и преобразует это в статические ресурсы, которые могут быть переданы клиенту. В частности, **Webpack** использует внутренний кэш, благодаря чему модули загружаются на клиент лишь один раз, что, в итоге, приводит к ускорению загрузки сайтов.
 
- ## Webpack и Babel для настройки React-приложения <a name="webpack-babel-react"></a>
+
+
+ # Webpack и Babel для настройки React-приложения <a name="webpack-babel-react"></a>
  Для того чтобы настроить проект React-приложения, необходимы следующие npm-модули:
  
 * **react** — библиотека React.
@@ -146,3 +149,90 @@ module.exports = {
 Cобрать проект возможно следующей командой:
 
 **npm run start**
+
+[^Вверх](#top)
+# Настройка проекта Vue <a name='vue'></a>
+1. Создаем **package.json**:
+```
+npm init
+```
+
+2. Добавляем зависимости в **package.json**:
+```javascript
+"dependencies": {
+    "vue": "2.6.11",
+    "vuex": "3.1.2"
+  },
+  "devDependencies": {
+    "webpack": "4.41.6",
+    "vue-loader": "15.9.0", // указывает кабудут загружаться файлы .vue
+    "buble": "0.19.8",
+    "buble-loader": "0.5.1",
+    "css-loader": "3.4.2",
+    "html-webpack-loader": "0.0.5",
+    "vue-template-compiler": "2.6.11", // необходим для vue-loader
+    "webpack-dev-server": // динамически собирать и запускать на выполнение приложение
+  }
+  ```
+  Добавить команды:
+  ```javascript
+  "scripts": {
+      "dev": "webpack-dev-server --hot --open",
+      "build": "webpack"
+    }
+  ```
+  *dev* - позволяет на лету сгенирировать файл сборки и запустить проект. `--hot` позволяет использовать Hot Module Replacement, который взаимодействует с  *vue-loader* и позволяет повторно произвести рендеринг каждой модели Vue. `--open` позволяет запустить браузер для обращения к приложению.
+
+
+  4. Создание файлов проекта:  
+  *index.html* с корневым блоком `<div id='app'></div>`, поклчючить скрипт `<script src="dist/build.js"></script>`;  
+  *src/main.js* с импортом vue и созданием экземпляра, импортировать здесь корневой компонент;  
+  *src/App.vue* корневой компонент.
+  ...
+
+  5. Создание файла конфигурации webpack:  
+  `config/webpack.config.js`  
+  В нем указывается какие лоадеры должны обрабатывать файлы.
+
+```javascript
+var path = require('path')
+const VueLoaderPlugin = require('vue-loader/lib/plugin'); // плагин для загрузки кода Vue
+ 
+module.exports = {
+ entry: './src/main.js', //входна точка приложения
+ output: {  // выходные параметры сборки
+   path: path.resolve(__dirname, './dist'),
+   publicPath: '/dist/',
+   filename: 'build.js'
+ },
+ module: {
+   rules: [
+     {
+       test: /\.vue$/,
+       loader: 'vue-loader'
+     }, {
+      test: /\.css$/,
+      use: [
+        'vue-style-loader',
+        'css-loader'
+      ]
+    }
+   ]
+ },
+ plugins: [
+    new VueLoaderPlugin() // добавляет плагин, с помощью которого загружается код vue
+   ]
+}
+```
+  В **package.json** прописать в scripts/build:  
+  `"build": "webpack --config config/webpack.config.js main.js build.js"`
+
+  6. Установка пакетов:
+  ```
+  npm install
+  ```
+  
+  7. Запуск проекта:
+  ```
+  npm run dev
+  ```

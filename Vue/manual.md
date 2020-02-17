@@ -13,6 +13,7 @@
 * [Стили](#styles)
 * [Отрисовка списков](#for)
 * [Обработка событий](#event)
+* [Шина событий](#event-bus)
 * [Пользовательские события](#users-event)
 * [Слоты](#slot)
 * [Динамические и асинхронные компоненты](#dinamyc)
@@ -24,6 +25,9 @@
 * [Плагины](#plugins)
 * [Фильтры](#filters)
 * [Vuex](#vuex)
+* [Vue-router](#router)
+* [Vue-cli](#cli)
+* [Тестирование](#test)
 
 
 ***
@@ -773,6 +777,27 @@ methods: {
 *.left, 
 .right, 
 .middle*
+
+
+[^ Вверх](#home)
+# Шина событий <a name='event-bus'>
+Глобальный event emitter? к которому можно обратиться из любого компонента.
+
+```javascript
+Object.defineProperty(Vue.prototype,"$bus",{
+	get: function() {
+		return this.$root.bus;
+	}
+});
+
+new Vue({
+	el: '#app',
+	data: {
+		bus: new Vue({}) // Here we bind our event bus to our $root Vue model.
+	}
+});
+```
+Далее доступно через `this.$bus`, подписаться на событие `this.$bus.$on()`, отписаться `this.$bus.$off()`, вызвать `this.$bus.$emit()`. Не забывать отписываться от события в **beforeDestroy**. Так же можно создать <a href='https://github.com/Kasheftin/route-planner-vue/blob/master/src/utils/PromisesBus.js'>централиваную шину промисов</a>.
 
 
 [^ Вверх](#home)
@@ -1542,7 +1567,6 @@ Vue.filter('capitalize', function (value) {
 
 ```
 
-
 [^ Вверх](#home) 
 # Vuex <a name='vuex'></a>
 Хранилище данных, которые могут изменяться только предсказуемым образом.  
@@ -1600,3 +1624,121 @@ const store = new Vuex.Store({
 **subscribe(handler: Function): Function** - обработчик handler вызывается после каждой мутации и получает в качестве параметров дескриптор мутации и состояние после мутации. 
 
 
+[^ Вверх](#home)
+# Vue-router <a name='vue-router'>
+Создание экземпляра объекта маршрутизатора:  
+```javascript
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+    mode: 'history', //указывает режим навигации
+    routes
+});
+```
+Предварительно необходимо создать роуты, где пути сопоставляются с компонентами:
+```javascript
+const routes = [
+  { path: '/',
+    name: 'home',  // именованный маршрут, далее можно обращаться <router-link :to="{ name: 'user', params: { userId: 123 }}">
+    component: Home // компонент через Vue.extend() либо объект с опциями компонента
+    alias: '/b' // т.е. при переходе по адресу /b отрендерится компонент Home
+  }, 
+  { path: '/about', 
+    redirect: { name: 'home' }, // перенаправление, можно указать строку или объект с описанием маршрута
+    component: About,
+    props: true // Когда props установлено в значение true, значения route.params будут устанавливаться входными параметрами компонента. Когда props объект, они будут устанавливаться входными параметрами компонента. 
+    },
+  { path: '*', 
+    component: NotFound 
+    } // сопоставляется по всем
+];
+```
+В текущем шаблоне использовать компонент `<router-view></router-view>`, куда будет помещаться соответствующий компонент.
+
+Доступен через `this.$router`, `this.$route` - текущий маршрут.
+Динамическая часть в роуте указывается через `:`, например, `{ path: '/user/:id', component: User }`, само значение доступно через `this.$route.params`, если параметр необязательный, то в конце ставится `?` ('/user/:id?').  
+
+`$route.path` - абсолютный путь текущего маршрута;  
+`$route.params` - пары ключ-значение динамических частей пути (`this.$route.params.pathMatch` - часть под звездочкой);  
+`$route.query` - параметры запроса;  
+`$route.hash` - хеш текущего маршрута (#);  
+`$route.fullPath` - полный url;  
+`$route.matched` - массив маршрутов;  
+`$route.name` - имя текущего маршрута;  
+`$route.redirectedFrom` - имямаршрута, с которого произошло перенаправление.
+
+Для использования вложенных путей (*/user/sora/profile*, *user/sora/posts*) используется опция `children`:  
+```javascript
+const router = new VueRouter({
+  routes: [
+    { path: '/user/:id', component: User,
+      children: [
+        {
+          path: 'profile',
+          component: UserProfile // user/sora/profile
+        },
+        {
+          path: 'posts',
+          component: UserPosts // user/sora/posts
+        },
+         { path: '', 
+           component: UserHome // user/sora
+         }
+      ]
+    }
+  ]
+})
+```
+
+Для перехода по новому url с добавление в историю:
+```javascript
+  router.push(location, onComplete?, onAbort?); // аналогично <router-link :to="..."> и window.history.pushState
+
+  router.push({ path: 'home' })
+  router.push({ name: 'user', params: { userId: '123' } })
+  router.push({ path: 'register', query: { plan: 'private' } })
+```
+
+Для перехода без добавления в историю:
+```javascript
+router.replace(location, onComplete?, onAbort?); // аналогично <router-link :to="..." replace> и  window.history.replaceState
+```
+
+Перейти по истории на какое-то кол-во шагов:
+```javascript
+router.go(n); // аналогично window.history.go(n)
+```
+
+### Именованное представление
+```html
+<router-view class="view one"></router-view>
+<router-view class="view two" name="a"></router-view>
+<router-view class="view three" name="b"></router-view>
+```
+```javascript
+  const router = new VueRouter({
+    routes: [
+      {
+        path: '/',
+        components: {
+          default: Foo,
+          a: Bar,
+          b: Baz
+        }
+      }
+    ]
+  })
+```
+
+
+
+### Хуки 
+
+
+
+
+# Vue-cli <a name='cli'></a>
+
+
+[^ Вверх](#home)
+# Тестирование <a name='test'></a>
