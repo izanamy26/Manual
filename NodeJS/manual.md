@@ -827,7 +827,6 @@ Mongoose имеет ряд встроенных правил валидации,
 **Model.findByIdAndUpdate(id, newData, options, function(err, docы) { ... })** - находит обновляемый объект по id, принимает четыре параметра: id документа, обновляющие данные, опции(если необходиы в коллбеке новые данные, то надо здесь передать ```{new: true}```), функция обратного вызова.  
 
 
-
 [^ Вверх](#home) 
 # Сокеты <a name='socket'></a>
 ```
@@ -891,7 +890,7 @@ console.log('Flash: ', req.flash('message')); // получение
 
 [^ Вверх](#home) 
 # Аутентификация <a name='auth'></a>
-Чаще всего реализуется с помощью библиотеки **passport.js**.
+Чаще всего реализуется с помощью библиотеки <a href='http://www.passportjs.org/docs/'>passport.js</a>.
 ```
 npm install passport --save
 ```
