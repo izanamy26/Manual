@@ -24,6 +24,7 @@
 * [Сокеты](#socket)
 * [Аутентификация](#auth)
 * [Архитектура](#architect)
+* [TypeScript](#typescript)
 
 
 [^ Вверх](#home)  
@@ -999,3 +1000,42 @@ app.get('/auth/facebook/callback', passport.authenticate(facebook, {
 
 [^ Вверх](#home) 
 # Архитектура <a name='architect'></a>
+
+
+
+[^ Вверх](#home)  
+# TypeScript < a name='typescript'></a>
+Установка:
+```
+npm install -g typescript
+```
+Проверить версию:
+```
+tsc --version
+```
+Сначала необходимо скомпилировать .ts файлы, потом запускать index.js  
+Минимальная настройка **tsconfig.json**:  
+```json
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES6",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "outDir": "bin/", // компилирует в папку bin
+        "sourceMap": false
+    }
+}
+```
+Установка типизации зависимостей:  
+```
+npm install --save-dev @types/node @types/express @types/express-session @types/body-parser @types/nedb
+```
+В **package.json** настройка команд:
+```
+"scripts": {
+    "start": "tsc --watch",
+    "built:watch": "nodemon ./bin/index.js"
+  }
+```  
+

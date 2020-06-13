@@ -28,6 +28,7 @@
 * [Vue-router](#router)
 * [Vue-cli](#cli)
 * [Тестирование](#test)
+* [vue-class-component](#vue-class-component)
 
 
 ***
@@ -1624,6 +1625,8 @@ const store = new Vuex.Store({
 **subscribe(handler: Function): Function** - обработчик handler вызывается после каждой мутации и получает в качестве параметров дескриптор мутации и состояние после мутации. 
 
 
+
+
 [^ Вверх](#home)
 # Vue-router <a name='vue-router'>
 Создание экземпляра объекта маршрутизатора:  
@@ -1742,3 +1745,14 @@ router.go(n); // аналогично window.history.go(n)
 
 [^ Вверх](#home)
 # Тестирование <a name='test'></a>
+
+
+
+
+
+[^ Вверх](#home) 
+# vue-class-component <a name='vue-class-component'></a>
+```
+npm install --save vue vue-class-component
+```
+Либо сразу при создание проекта через vue-cli (```vue create my-app```), указать TypeScript и на вопрос, использовать ли class-style component - yes. 
