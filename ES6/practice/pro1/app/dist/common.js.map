@@ -1,1 +1,0 @@
-{"version":3,"sources":["../js/common.js"],"names":["f","console","log"],"mappings":"AAAA,IAAIA,IAAI,MAAK;AACT,WAAOC,QAAQC,GAAR,CAAY,OAAZ,GAAsB,QAA7B;AACH,CAFD;;AAIAD,QAAQC,GAAR,CAAYF,GAAZ","file":"common.js","sourcesContent":["let f = () =>{\r\n    return console.log('nnnnn'), 'ffffff';\r\n}\r\n\r\nconsole.log(f());"]}
