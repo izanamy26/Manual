@@ -1,6 +1,8 @@
-# TypeScript
+# TypeScript <a name='home'></a> 
 
 * [ tsconfig.json](#tsconfig)
+* [Типы данных](#types)
+  + [Omit](#omit)
 
 # tsconfig.json <a name='tsconfig'></a>
 // Файл "tsconfig.json":
@@ -139,3 +141,21 @@
         , "node_modules"
       ]
 }
+
+[^ Вверх](#home)
+# Типы данных <a name='types'></a>
+## Omit <a name='omit'></a>
+Позволяет исключать из типа определенные свойства. **Omit** принимает тип и объединение ключей, после чего возвращает новый тип, из которого исключены свойства, описанные ключами. 
+
+```javascript
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+ 
+interface A { 
+    propA?: string; 
+    propB?: string; 
+    propC?: string; 
+}
+ 
+type B = Omit<A, 'propA' | 'propC'>; 
+const b: B = { propA: 'hi' }; // ошибка;
+```

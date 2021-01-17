@@ -19,6 +19,7 @@
 
 
 * <a src="https://ru.reactjs.org/docs/getting-started.html">Документация React</a>
+* <a src="https://github.com/leonidlebedev/javascript-airbnb/tree/master/react">Стиль написания кода</a>
 * [Полезное](#sweet)
 
 *****
@@ -30,6 +31,10 @@
 * npm create-react-app my-app
 * cd my-app
 * npm start
+
+****
+## Typescript
+* npx create-react-app app-name --template typescript
 
 # Импортировать библиотеку react и react-dom
 ```javascript
