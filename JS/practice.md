@@ -646,3 +646,12 @@ function getDict(obj) {
 }
 ```
 </details>
+<hr />
+Реализовать генератор цвета в hex-системе.
+
+<hr />
+Сверить две строки так, что буквы из первой строки в том же порядке встчаются во второй строке.  
+isConstituent('weght', 'aswfreghklto'); // true
+isConstituent('weght', 'ashwfregklto'); // false
+
+<hr />
