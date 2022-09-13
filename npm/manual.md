@@ -5,6 +5,7 @@
 * [Обновить npm](#npm-update)
 * [npm init](#init)
 * [npm install](#install)
+* [Ошибки](#errors)
 
 **package.json** - описание модулей.
 
@@ -51,3 +52,7 @@ npm install <tarball url>
 ```
 npm list --depth=0
 ```
+
+[^Вверх](#top)
+## Ошибки<a name='errors'></a>
+Если версия **npm** больше 7, могут не ставится пакеты, тогда можно попробовать использовать флаг ```--legacy-peer-deps```.
